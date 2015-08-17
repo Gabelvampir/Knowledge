@@ -1,0 +1,2 @@
+dvdbackup -i /dev/sr0 -I
+dvdbackup -i /dev/sr0 -M -v -p

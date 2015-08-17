@@ -1,0 +1,1 @@
+:g/^$/d   //:g executes command on lines matching regexp (empty line), command is d (delete)

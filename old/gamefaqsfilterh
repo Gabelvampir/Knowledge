@@ -1,0 +1,6 @@
+#!/bin/sh
+# Skript to format and filter the lynx textdump
+sed -nf ~/.gamefaqs/filterh  $1 >> $GTMP/tmph
+sort -n $GTMP/tmph >> $2
+#sed -e :a -e '$!N;s/\nhttp/ http/;ta' -e 'P;D' $GTMP/tmph | sort -n >> $2
+#'/469050\|924363\|924364\|927345/{p;n;p}'

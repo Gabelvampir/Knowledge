@@ -1,0 +1,1 @@
+tar -cf - *|split -b 1800m - blah.tar.

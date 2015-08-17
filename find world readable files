@@ -1,0 +1,1 @@
+find / -perm 777 -a \! -type s -a \! -type l -a \! \( -type d -a -perm 1777 \)

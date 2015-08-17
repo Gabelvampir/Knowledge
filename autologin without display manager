@@ -1,0 +1,49 @@
+How to autologin X without a display manager
+
+Problem: configure a custom Debian box used to drive some industrial machinery. The system should boot directly into the GUI control application, that runs full screen, with root privileges. Everything should respawn if X is killed or the control application dies.
+
+In theory, you'd run an X display manager with autologin, then run matchbox-window-manager and the control application as the X session. You wish. At the end of the post is an explanation of why this way failed.
+
+So, here is how to get the whole thing to work, without a display manager.
+
+Use init to drive the whole thing:
+
+6:23:respawn:/sbin/getty -L -n -l /usr/local/sbin/autologin
+
+This will respawn everything if it dies, stop respawning if it dies all the time, avoid starting it in single user mode, and not ask for a username.
+
+/usr/local/sbin/autologin contains:
+
+#!/bin/sh
+/bin/login -f root MAINAPP=true
+
+This will autologin as root, setting an extra env variable.
+
+Then comes root's ~/.bash_profile, that just starts X if we are doing autologin:
+
+if [ "$MAINAPP" = "true" ]
+then
+    startx
+    logout
+fi
+
+If the application was running as a special user, we could have made things simpler and just used startx as the shell for that user; however, we still want root to have bash as the shell, and the above hack does it.
+
+Finally, root's ~/.xsession:
+
+#!/bin/sh
+
+matchbox-window-manager &
+
+# If the touch screen is not calibrated, run the calibration
+while [ ! -f /etc/touchscreen-calibration ]
+do
+        calibrate-touchscreen
+done
+
+# Run the main application: if it ends, the session ends
+main-application
+
+And there we go, no dependencies at all.
+
+from Enrico Zini's blog, via Planet Debian, 13.06.2008

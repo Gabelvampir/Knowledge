@@ -1,0 +1,106 @@
+#!/bin/sh
+# Big wrapper script for the gamefaqs skripts
+if [ ! -d $GTMP ]
+   then mkdir $GTMP
+else rm -Rf $GTMP/*
+fi
+
+case $1 in
+
+today)
+   lynx -dump http://www.gamefaqs.com/new/faq_`date +%F -d '-1 day'`.html > $GTMP/dump1day
+   gamefaqsformat $GTMP/dump1day $GTMP/form
+   gamefaqsfilter $GTMP/form $GTMP/dump
+   sed -f ~/.gamefaqs/replace $GTMP/dump >> $GTMP/toorder
+   ~/.gamefaqs/order $GTMP/toorder $GTMP/get
+   gamefaqsfinal $GTMP/get $GTMP/wget
+   chmod u+x $GTMP/wget
+   $GTMP/wget
+   fgrep saved /tmp/gamefaqs_`date +%F`.log | sed -e 's/.*`//' -e 's/'\''.*//' | less
+   ;;
+
+since)
+   for ((i=1; i<=$2; i++))
+   do
+      export i=$i
+      lynx -dump http://www.gamefaqs.com/new/faq_`date +%F -d '-'$i' days'`.html > $GTMP/dump1day
+      gamefaqsformat $GTMP/dump1day $GTMP/form
+      gamefaqsfilter $GTMP/form $GTMP/dump
+   done
+   sed -f ~/.gamefaqs/replace $GTMP/dump >> $GTMP/toorder
+   ~/.gamefaqs/order $GTMP/toorder $GTMP/get
+   gamefaqsfinal $GTMP/get $GTMP/wget
+   chmod u+x $GTMP/wget
+   $GTMP/wget
+   fgrep saved /tmp/gamefaqs_`date +%F`.log | sed -e 's/.*`//' -e 's/'\''.*//' | less
+   ;;
+
+html)
+   lynx -dump http://www.gamefaqs.com/new/code_`date +%F -d '-1 day'`.html > $GTMP/dump1dayh
+   gamefaqsformath $GTMP/dump1dayh $GTMP/formh
+   gamefaqsfilterh $GTMP/formh $GTMP/dump
+   gamefaqsfinalh $GTMP/dump $GTMP/wget
+   chmod u+x $GTMP/wget
+   $GTMP/wget
+   fgrep saved /tmp/gamecode_`date +%F`.log | sed -e 's/.*`//' -e 's/'\''.*//' | less
+   ;;
+   
+htmlsince)
+   for ((i=1; i<=$2; i++))
+   do
+      export i=$i
+      lynx -dump http://www.gamefaqs.com/new/code_`date +%F -d '-'$i' day'`.html > $GTMP/dump1dayh
+   gamefaqsformath $GTMP/dump1dayh $GTMP/formh
+   gamefaqsfilterh $GTMP/formh $GTMP/dump
+   done
+   gamefaqsfinalh $GTMP/dump $GTMP/wget
+   chmod u+x $GTMP/wget
+   $GTMP/wget
+   fgrep saved /tmp/gamecode_`date +%F`.log | sed -e 's/.*`//' -e 's/'\''.*//' | less
+   ;;
+   
+update)
+# Generate Filter sed Skript
+   sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $2 }' | sed -e 's/^/\//' -e 's/$/\/\{p\;n\;p\}/' > ~/.gamefaqs/filter
+# Generate Replacer sed Skript
+   sed -n '/#2#/,/#2#/p' ~/.gamefaqs/custom | grep -v \#2\# | awk -F \! '{ print $2,$3}' | sed -e 's/^/s\//' -e 's/ /\//' -e 's/$/\//' > ~/.gamefaqs/replace
+# Generate the order Shell-Skript
+   echo '#!/bin/sh' > ~/.gamefaqs/order && echo '# This Script is generated automaticly' >> ~/.gamefaqs/order && echo >> ~/.gamefaqs/order && sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $2 }' | sed -e 's/^/sed \-n '\''\//' -e 's/$/\/s\/ \/\\n\/p'\'' $1 \| sort \-ru >> $2; echo >> $2/' >> ~/.gamefaqs/order
+   chmod u+x ~/.gamefaqs/order
+# Generate the finalizer sed Skript
+   sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $2,$2 }' | sed -e 's/^/s$/' -e 's/ /\$\~\/.gamefaqs\/mover /1' -e 's/$/\$/' > ~/.gamefaqs/final
+# Generate the mover Shell-Skript
+   echo '#!/bin/sh' > ~/.gamefaqs/mover && echo '# This Script is generated automaticly' >> ~/.gamefaqs/mover && echo >> ~/.gamefaqs/mover && echo 'case $1 in' >> ~/.gamefaqs/mover && echo >> ~/.gamefaqs/mover && sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $2,$3 }' | sed -e's/ /\)\n   mv * $FAQ\//1' -e 's/"$/"\n   ;;\n/' >> ~/.gamefaqs/mover && echo 'esac' >> ~/.gamefaqs/mover 
+   chmod u+x ~/.gamefaqs/mover
+# HTML
+# Generate Filter sed Skript
+   sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $2 }' | sed -e 's/^/\//' -e 's/$/\/p/' > ~/.gamefaqs/filterh
+#   chmod u+x ~/.gamefaqs/order
+# Generate the finalizer sed Skript
+   sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $2,$2,$2 }' | sed -e 's/^/s\$/' -e 's/ /\.html\$/1' -e 's/ /\.html\\n\~\/.gamefaqs\/moverh /1' -e 's/$/\$/' > ~/.gamefaqs/finalh
+# Generate the mover Shell-Skript
+   echo '#!/bin/sh' > ~/.gamefaqs/moverh && echo '# This Script is generated automaticly' >> ~/.gamefaqs/moverh && echo >> ~/.gamefaqs/moverh && echo 'case $1 in' >> ~/.gamefaqs/moverh && echo >> ~/.gamefaqs/moverh && sed -n '/#1#/,/#1#/p' ~/.gamefaqs/custom | grep -v \#1\# | awk -F \! '{ print $4,$2,$3 }' | grep -v § | sed -e's/ /\)\n   mv * $FAQ\//2' -e 's/"$/Cheats \& Secrets\/"\n   ;;\n/' >> ~/.gamefaqs/moverh && echo 'esac' >> ~/.gamefaqs/moverh 
+   chmod u+x ~/.gamefaqs/moverh
+   ;;
+   
+logs)
+   fgrep saved /tmp/gamefaqs_`date +%F`.log | sed -e 's/.*`//' -e 's/'\''.*//' | less
+   fgrep saved /tmp/gamecode_`date +%F`.log | sed -e 's/.*`//' -e 's/'\''.*//' | less
+   ;;
+
+help)
+   echo 'Currently implemented options:'
+   echo 'today: get the up-to-date GameFAQs'
+   echo 'since x: get the GameFAQs of the last x days'
+   echo 'html: get the up-to-date Cheats & Secrets html pages'
+   echo 'htmlsince x: get the Cheats & Secrets pages of the last x days'
+   echo 'update: update scripts generated from the custom file'
+   echo 'logs: show the logs of today'
+   ;;
+
+*)
+   echo 'Insufficient Arguments'
+   ;;
+
+esac
+

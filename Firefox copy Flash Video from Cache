@@ -1,0 +1,1 @@
+for x in `file * | grep -i 'flash video' | cut -c 1-11 | xargs`; do mv $x ~/$x-lol.flv ; done

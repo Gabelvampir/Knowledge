@@ -1,0 +1,15 @@
+FONT="DejaVu Sans Oblique"
+OUTFNAME=$(echo ${FONT} | sed -e "s| |_|g")
+numdigits=100
+for i in $(seq 0 9) ; do
+   for j in $(seq 1 ${numdigits}) ; do
+   echo -n $i >> numeri.txt
+   done
+   printf "\n" >> numeri.txt
+done
+
+
+and creating a waterfall image:
+
+
+pango-view --font="${FONT}" --waterfall --dpi=72 -q -o ${OUTFNAME}.png numeri.txt

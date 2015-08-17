@@ -1,0 +1,4 @@
+streamripper 'http://cerebrum.dnalounge.com:8001/mixtape/015.mp3' -D '%2q - %A - %T' -s -o larger -t -T -l 5700
+streamripper 'http://uwstream2.somafm.com:8000' -D '%A - %T' -o larger -t -T
+streamripper 'http://ice.somafm.com/xmasrocks' -D '%A - %T' -o larger -t -T
+streamripper 'http://sfstream1.somafm.com:2106' -D '%A - %T' -o larger -t -T

@@ -1,0 +1,3 @@
+#!/bin/sh
+# Skript to format and filter the lynx textdump
+sed -n '/References/,$p' $1 | sed -n '/gamefaqs/p' | awk '{ print $2 }' | sed -e 's$http://www.gamefaqs.com/.*/.*/game/$$' -e '/[0-9*]/s$\.html$$' | grep -v 'www.gamefaqs.com' >> $2

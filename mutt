@@ -1,0 +1,1 @@
+mutt -f mbox, alles taggen (T pattern: .) , dann tag-save (;s) nach /var/spool/mail/deusser (um mails aus mbox nach mail-spool zu verschieben)

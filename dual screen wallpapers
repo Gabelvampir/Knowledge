@@ -1,0 +1,4 @@
+shuf -n1 -e ~/walls/pool/* | convert `cat -` -resize 1280x1024 -background black -gravity center -extent 1280x1024 /tmp/resize.jpg
+convert /tmp/resize.jpg /tmp/resize.jpg +append /tmp/double.jpg
+fbsetbg -a -u Esetroot /tmp/double.jpg
+rm /tmp/resize.jpg /tmp/double.jpg

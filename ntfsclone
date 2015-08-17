@@ -1,0 +1,4 @@
+Backup:
+ntfsclone -so - $DEVICE | pigz | split -db 1175MB - .temp.ntc.gz.
+Restore:
+cat $FILE.ntc.gz.* | pigz -d | ntfsclone -rO $DEVICE - 

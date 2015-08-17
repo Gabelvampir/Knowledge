@@ -1,0 +1,4 @@
+#!/bin/sh
+# Script to generate the final script that gets the files
+echo '#!/bin/sh' > $2 && echo '# This script is generated automatically' >> $2 && echo 'if [ -d $GTMP ]' >> $2 && echo '   then rm -Rf $GTMP/gettemp' >> $2 && echo 'fi' >> $2 && echo 'mkdir $GTMP/gettemp/' >> $2 && echo 'cd $GTMP/gettemp' >> $2 && echo >> $2 && sed -e '/./,/^$/!d' -e 's/^http/wget \-a \/tmp\/gamefaqs\_\`date \+\%F\`.log http/1' $1  -f /home/scotty/.gamefaqs/final >> $2 && echo 'cd $OLDPWD' >> $2
+chmod u+x $2

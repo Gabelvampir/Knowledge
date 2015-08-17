@@ -1,0 +1,3 @@
+create index.html with:
+indexmaker --output /var/www/mrtg/index.html /etc/mrtg.cfg
+---from http://www.cyberciti.biz/nixcraft/linux/docs/uniqlinuxfeatures/mrtg/mrtg_config_step_5.php

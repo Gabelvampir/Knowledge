@@ -1,0 +1,1 @@
+mencoder dvd://8 -dvd-device Highlander/ -ss 1:31:34 -endpos 30 -slang none -alang de -oac mp3lame -ovc copy -noskip -mc 0 -o /tmp/highlander20.avi

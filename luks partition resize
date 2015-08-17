@@ -1,0 +1,13 @@
+How to resize a luks partition
+
+After things-not-to-do.mdwn I want to be careful when resizing a luks partition: here's a note with the right procedure.
+
+As explained in this bug report, the way to resize a luks partition is:
+
+# lvresize -L+100M /dev/vg00/test 
+  Extending logical volume test to 400.00 MB
+  Logical volume test successfully resized
+# cryptsetup resize test1 
+# resize2fs /dev/mapper/test1
+
+from Enrico Zini's blog, via Planet Debian, 13.06.2008

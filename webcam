@@ -1,0 +1,34 @@
+#!/bin/sh
+
+#set -x
+
+REFRESH=10
+FILE=/home/bt/html/webcam.jpg
+
+errorexit() {
+	echo "Content-Type: text/plain"
+	echo ""
+	echo "read failed!"
+	exit 1
+}
+
+outputexit() {
+	echo "Content-Type: image/jpeg"
+	echo ""
+	cat "$FILE"
+	exit 0
+}
+
+refreshimage() {
+	now="$(date +%s)"
+	filedate="$(date -r /home/bt/html/webcam.jpg +%s)"
+	if [ $(($now - $filedate)) -lt $REFRESH ] ; then
+		return
+	fi
+	/usr/bin/vgrabbj > "$FILE" || errorexit
+}
+
+refreshimage
+test -s "$FILE" && outputexit || errorexit
+
+exit 0

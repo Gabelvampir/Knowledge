@@ -1,0 +1,1 @@
+diff -crB OrigDir ChangedDir > patchfile.patch

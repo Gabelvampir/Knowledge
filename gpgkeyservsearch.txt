@@ -1,0 +1,1 @@
+gpg --keyserver subkeys.pgp.net --search-keys "deußer"

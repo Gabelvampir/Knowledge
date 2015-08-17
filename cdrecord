@@ -1,0 +1,1 @@
+cdrecord -v driveropts=burnfree dev=/dev/hdd

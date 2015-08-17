@@ -1,0 +1,11 @@
+<message from="scotty@jabber.fsinf.de/cube" type="chat" to="alexfiftyfour@jabber.fsinf.de" >
+<body>augenkrebstest</body>
+<html xmlns="http://jabber.org/protocol/xhtml-im">
+<body xmlns="http://www.w3.org/1999/xhtml" style="background-color:#ffc0c0;color:#00ff00" >
+<span style="font-family:Fantasy" >augenkrebs</span>
+</body>
+</html>
+<x xmlns="jabber:x:event">
+<composing/>
+</x>
+</message>

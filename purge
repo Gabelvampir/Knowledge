@@ -1,0 +1,1 @@
+dpkg -l | grep ^rc | cut -c5- | cut -f1 -d " " | xargs echo | less

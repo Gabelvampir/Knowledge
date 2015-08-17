@@ -1,0 +1,2 @@
+tar -acv --exclude=Dropbox/* --exclude=*.iso -f Dropbox/taylorix/www.tar.bz2 /var/www/
+tar -acv --exclude=Dropbox/* --exclude=*.iso -f Dropbox/taylorix/home.tar.bz2 ~

@@ -1,0 +1,1 @@
+wget -U mozilla -e robots=off -nv -t0 -c -Y off -nH --cut-dirs=N -r -l0 -k -p -np

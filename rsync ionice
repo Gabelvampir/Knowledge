@@ -1,0 +1,1 @@
+ionice -c idle nice rsync -Pav --bwlimit=20000 src dest #bwlimit is in kb

@@ -1,0 +1,11 @@
+Who has already been using dd for endless data transfer without really knowing what is happening ? That is rather annoying. Sure, when the target is a normal file, you can always use
+
+watch ls -l target
+
+But, that won't tell you the rate of transfer, and it won't work if the target is a special file (device, pipe, ...). Fortunately, dd accepts the USR1 signal to print out some small statistics... Well, combining that with the watch tricks gives this:
+
+watch killall -USR1 dd
+
+And there you go, dd is now regularly printing out statistics. Pretty neat, isn't it ?
+
+by Vincent Fourmond at his blog/planet.debian.net, 26.02.2008

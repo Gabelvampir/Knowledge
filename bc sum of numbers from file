@@ -1,0 +1,1 @@
+cat Pokewalker.txt |xargs echo|sed "s/ / + /g"|bc

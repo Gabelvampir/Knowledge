@@ -1,0 +1,1 @@
+w3m 'http://www.kis.uni-kl.de/campus/all/roomGroups.asp?expand=1%2E+Frei+buchbare+H%F6rs%E4le+und+Seminarr%E4ume&view=true&tguid=0xF63FFC2F4BC6A1469AC186FAAFD336EF' | cat | fgrep saalinformation | sed 's/^.* \(..-... \)/\1/' | awk '{print ,}' | sort -rn | nl

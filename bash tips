@@ -1,0 +1,30 @@
+Miscellaneous bash tips
+
+A few useful configuration bits:
+
+# Don't put duplicate lines in the history
+export HISTCONTROL=ignoredups
+
+# When you use history expansion (the !something), allows to edit the
+# expanded line before executing it
+shopt -s histverify
+
+# Correct spelling mistakes when using 'cd'
+shopt -s cdspell
+
+# Do not attempt completion on an empty line
+shopt -s no_empty_cmd_completion
+
+A few useful keystrokes:
+
+    * Alt + dot: insert the last argument of the previous command. Equivalent to inserting the expansion of !$ at the cursor position.
+    * Alt + >: go to the end of the history. Sometimes it happens, when using Ctrl + r, that I mistakenly land before the command that I was looking for, and I need to hold arrow-down for a while to go back at the end. This does the trick. Of course, Alt + < goes at the beginning. Also, Ctrl
+          o s does forward search.
+    * If you need to execute a bunch of consecutive lines from the history, try Ctrl + o: it runs the current line and then takes you to the next one in the history.
+    * Unsure of expansion, or you would like to act on *.jpg exept maybe a few of them? Ctrl + Alt + e does full expansion on the current line, and Alt + ^ does history expansion only. If the expansion is too big, use Ctrl+x then Ctrl+e, which loads the current command in an editor and runs when you exit the editor.
+    * If you want to postpone the current command, Alt + # will comment it out and and enter it into the history, so that you can look it up later. (via Ben Hutchings)
+
+For more useful keystrokes, run man bash, look for "Commands for Manipulating the History" and read down from there.
+
+from Enrico Zini's blog, via Planet Debian, 13.06.2008
+-----

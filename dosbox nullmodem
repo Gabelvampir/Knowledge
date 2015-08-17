@@ -1,0 +1,2 @@
+serial1 nullmodem port:5000
+serial1 nullmodem server:<IP or hostname of server> port:5000

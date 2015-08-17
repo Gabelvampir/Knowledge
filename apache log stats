@@ -1,0 +1,1 @@
+zcat access.log.*.gz | cat access.log access.log.1 - | fgrep t_schmid | fgrep wbfs2fat | sed -e "s/.*GET//" -e "s/HTTP.*//" -e"s/.*HEAD//" | sort | uniq -c | sort -n | less

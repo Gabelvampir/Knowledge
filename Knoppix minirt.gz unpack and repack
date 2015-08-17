@@ -1,0 +1,12 @@
+to extract:
+  $ gunzip -c /media/sda5/boot/isolinux/minirt.gz > /tmp/minirt
+  $ mkdir /tmp/miniroot
+  $ cd /tmp/miniroot
+  $ cpio -ivmd --no-absolute-filenames -I /tmp/minirt
+
+miniroot fs is now in /tmp/miniroot
+
+to repack:
+  $ cd /tmp/miniroot
+  $ find . | cpio -o -H newc > /tmp/minirt.new
+  $ gzip -9 -c /tmp/minirt.new > /media/sda5/boot/isolinux/minirt.gz
