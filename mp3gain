@@ -1,1 +1,2 @@
+mp3gain -r -c -d 7.855
 mp3gain -r -c -T -p -f -e /media/sdb/MUSIC/Mix/*
