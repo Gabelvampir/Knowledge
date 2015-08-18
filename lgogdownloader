@@ -1,0 +1,4 @@
+~scotty/work/lgogdownloader/bin/Release/lgogdownloader --platform 1 --limit 1500 --no-subdirectories --subdir-dlc %dlcname% --update-cache
+~scotty/work/lgogdownloader/bin/Release/lgogdownloader --platform 1 --limit 1500 --no-subdirectories --subdir-dlc %dlcname% --use-cache --status | tee lgog.log
+~scotty/work/lgogdownloader/bin/Release/lgogdownloader --platform 1 --limit 1500 --no-subdirectories --subdir-dlc %dlcname% --use-cache --check-orphans | tee lgog-orphans.log
+~scotty/work/lgogdownloader/bin/Release/lgogdownloader --platform 1 --limit 1500 --no-subdirectories --subdir-dlc %dlcname% --use-cache --repair --download --game star_wars
