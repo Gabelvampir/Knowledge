@@ -1,1 +1,3 @@
 gpg --keyserver keyserver.linux.it --search-keys "deußer"
+gpg --keyserver keyserver.linux.it --refresh-keys
+gpg --keyserver keyserver.linux.it --send-key 0F6D4325
