@@ -1,0 +1,13 @@
+libcurl4-gnutls-dev | libcurl4-nss-dev | libcurl4-openssl-dev
+libboost1.55-dev
+libjsoncpp-dev
+liboauth-dev
+librhash-dev
+libtinyxml-dev
+libhtmlcxx-dev
+libboost-system-dev
+libboost-filesystem-dev
+libboost-regex-dev
+libboost-program-options-dev
+libboost-date-time-dev
+help2man
