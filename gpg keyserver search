@@ -1,1 +1,1 @@
-gpg --keyserver subkeys.pgp.net --search-keys "deußer"
+gpg --keyserver keyserver.linux.it --search-keys "deußer"
