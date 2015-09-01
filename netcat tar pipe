@@ -1,0 +1,13 @@
+receiver:
+netcat -l -p 7000 | tar x
+
+sender:
+tar cf - * | netcat otherhost 7000
+
+
+for lvm images:
+receiver:
+nc -l 7000 | dd of=/dev/mapper/vgfoo-lvbar bs=32768
+
+sender:
+dd if=/dev/mapper/vgbaz-lvquz bs=32768 | nc otherhost 7000
