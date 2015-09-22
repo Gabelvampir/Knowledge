@@ -1,0 +1,6 @@
+--deploy existing repo in remote server--
+* clone repo as bare repo: git clone --bare my_project my_project.git
+* put bare repo on server, i.e. with scp -r
+* add server repo as remote: git remote add origin ssh://server/absolute/path
+* set origin as upstream: git push --set-upstream origin master
+* optionally also remove origin in bare repo: git remote remove origin
