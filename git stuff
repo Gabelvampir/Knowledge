@@ -4,3 +4,21 @@
 * add server repo as remote: git remote add origin ssh://server/absolute/path
 * set origin as upstream: git push --set-upstream origin master
 * optionally also remove origin in bare repo: git remote remove origin
+
+
+--discard local changes and get back to newest repo state--
+git fetch --all
+git reset --hard origin/master
+(OR If you are on some other branch  git reset --hard origin/your_branch)
+Explanation:
+git fetch downloads the latest from remote without trying to merge or rebase anything.
+Then the git reset resets the master branch to what you just fetched. The --hard option changes all the files in your working tree to match the files in origin/master
+
+It's worth noting that it is possible to maintain current local commits by creating a branch from master before resetting:
+git checkout master
+git branch new-branch-to-save-current-commits
+git fetch --all
+git reset --hard origin/master
+--from http://stackoverflow.com/questions/1125968/force-git-to-overwrite-local-files-on-pull
+
+
