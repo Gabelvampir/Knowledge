@@ -1,1 +1,2 @@
 apt-get update && apt-get upgrade && apt-get dist-upgrade && apt-get clean
+aptitude update && aptitude safe-upgrade && apt-get clean
