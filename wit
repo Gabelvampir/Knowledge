@@ -1,2 +1,5 @@
+# Wii disc scrubbing and copying (from Windows shortcut)
+"D:\New folder\wit-v2.31a-r6005-cygwin\bin\wit.exe" copy --DEST "e:\tmp\%Y\%+" -B -P -z
+# GC image copying for nintendont
 ~/work/wit/wit-v2.31a-r6005-i386/bin/wit copy -P --source Super\ Mario\ Sunshine\ \(Europe\)\ \(En\,Fr\,De\,Es\,It\).iso -D /media/scotty/WII-SCOTTY/games/%Y/game.iso
 
