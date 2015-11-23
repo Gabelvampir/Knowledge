@@ -1,0 +1,1 @@
+wodim dev=/dev/sr0 -prcap
