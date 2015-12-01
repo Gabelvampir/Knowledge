@@ -1,0 +1,11 @@
+<ASX version="3.0">
+<Entry>
+<ref HREF="http://213.132.182.40:80"/>
+
+<Banner HREF="http://www.fresh.fm/media/audio/streambanner.GIF">
+<Abstract>Voel je Goed! Fresh FM</Abstract>
+<MoreInfo href = "http://www.fresh.fm" />
+</Banner>
+
+</Entry>
+</ASX>

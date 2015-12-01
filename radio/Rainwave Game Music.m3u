@@ -1,0 +1,11 @@
+#EXTM3U
+#EXT3INF:0,Rainwave Random Relay
+http://rwstream.rainwave.cc:8000/rainwave.ogg
+#EXT3INF:0,Rainwave Relay 1 - Donated by Tanaric - California, USA
+http://radio.petosky.net:8000/rainwave.ogg
+#EXT3INF:0,Rainwave Relay 2 - Donated by Lyfe - Connecticut, USA
+http://stream1.gameowls.com:8000/rainwave.ogg
+#EXT3INF:0,Rainwave Relay 3 - Donated by Lyfe - Connecticut, USA
+http://stream2.gameowls.com:8000/rainwave.ogg
+#EXT3INF:0,Rainwave Overflow - Donated by Tanaric - California, USA
+http://octosphere.com:8000/rainwave.ogg

@@ -1,0 +1,9 @@
+#EXTM3U
+#EXTINF:0,OCR Radio Random Relay
+http://ocrstream.rainwave.cc:8000/ocremix.ogg
+#EXTINF:0,OCR Radio Relay 1 - Donated by Dracoirs - Arizona, USA
+http://ormgas.dracoirs.com:8000/ocremix.ogg
+#EXTINF:0,OCR Radio Relay 2 - Donated by Lyfe - Connecticut, USA
+http://stream1.gameowls.com:8000/ocremix.ogg
+#EXTINF:0,OCR Radio Relay 3 - Donated by Lyfe - Connecticut, USA
+http://stream2.gameowls.com:8000/ocremix.ogg
