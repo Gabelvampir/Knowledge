@@ -1,0 +1,2 @@
+rdesktop -g 1280x1024 -k de win1.fg-networking.de
+rdesktop -g 1280x1024 -k de ws-dev.fg-networking.de
