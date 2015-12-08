@@ -1,0 +1,2 @@
+ldapsearch -L -b cn=fg-networking.de -D cn=admin,cn=fg-networking.de -W -y olcRootPW -H ldaps://id.fg-networking.de |less
+
