@@ -1,0 +1,29 @@
+# Standard syntax.
+for a in 1 2 3 4 5 6 7 8 9 10
+do
+  echo -n "$a "
+done
+-------
+# Using "seq" ...
+for a in `seq 10`
+do
+  echo -n "$a "
+done 
+-------
+# Using brace expansion ...
+# Bash, version 3+.
+for a in {1..10}
+do
+  echo -n "$a "
+done
+-------
+# Now, let's do the same, using C-like syntax.
+
+LIMIT=10
+
+for ((a=1; a <= LIMIT ; a++))  # Double parentheses, and naked "LIMIT"
+do
+  echo -n "$a "
+done 
+-------
+from http://tldp.org/LDP/abs/html/loops1.html
