@@ -1,0 +1,13 @@
+Opening serial port (with the correct baud rate)	
+bash> screen /dev/ttyUSB0 57600
+
+/dev/ttyUSB0 is the serial port, while 57600 sets its baud rate into 57600bps.
+
+Enable the CTS/RTS handshake
+bash> screen /dev/ttyUSB0 57600,ctsrts
+
+Close the screen after you finish the debugging session
+Ctrl + A + k
+
+View your serial port status (CTS/RTS/DTS/PE/RI..etc)
+Ctrl + A + i
