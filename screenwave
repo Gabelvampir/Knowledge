@@ -1,1 +1,1 @@
-youtube-dl -r 1.5M -o "Ghostbusters Part %(autonumber)s %(format)s.%(ext)s" --autonumber-size=1 http://player2.screenwavemedia.com/player.php?id=sfdebris-5610770927e1e
+h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" --ffmpeg-location d:\ffmpeg\bin 
