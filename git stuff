@@ -22,3 +22,7 @@ git reset --hard origin/master
 --from http://stackoverflow.com/questions/1125968/force-git-to-overwrite-local-files-on-pull
 
 
+--cache credentials--
+git config credential.helper 'cache --timeout 60000'
+
+caches credentials for 10 hours
