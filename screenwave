@@ -1,1 +1,2 @@
 h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" --ffmpeg-location d:\ffmpeg\bin 
+h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" -f hd1 
