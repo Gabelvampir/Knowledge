@@ -1,0 +1,2 @@
+rsync -Pav -e "ssh -c arcfour"
+rsync -rv --progress --size-only --no-t --no-p --no-o --no-g -e "ssh -c arcfour" #for writing to FAT32 filesystem or similar
