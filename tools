@@ -1,2 +1,3 @@
 pqiv	-- image display
-scrot	-- screenshot commandline program (use i.e. -s)
+crot	-- screenshot commandline program (use i.e. -s)
+mupdf   -- fast pdf reader (on windows also part of SumatraPDF)
