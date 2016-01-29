@@ -26,3 +26,12 @@ git reset --hard origin/master
 git config credential.helper 'cache --timeout 60000'
 
 caches credentials for 10 hours
+
+
+--multiple remote repositories--
+(does not work with old versions of git)
+* set up the remote repositories (i.e. method above)
+* on local repository call: git remote set-url origin --push --add URL1
+* then: git remote set-url origin --push --add URL2
+* rinse and repeat for all remotes
+* result can be checked with: git remote -v show
