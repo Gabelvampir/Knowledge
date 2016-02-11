@@ -1,0 +1,1 @@
+rsync -rv --progress --size-only --no-t --no-p --no-o --no-g -e "ssh -c 3des-cbc" --rsync-path=/etc/disk/test/rsync -c ../zsun.tar  10.168.168.1:/etc/disk/
