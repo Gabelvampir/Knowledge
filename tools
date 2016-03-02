@@ -1,4 +1,4 @@
 pqiv	-- image display
-crot	-- screenshot commandline program (use i.e. -s)
+scrot	-- screenshot commandline program (use i.e. -s)
 mupdf   -- fast pdf reader (on windows also part of SumatraPDF)
 latexmk -- perl script to build LaTeX documents correctly (use --pdf to get PDFs, -c to clean temp files and -C to also clean built PDFs)
