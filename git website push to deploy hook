@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# from c't 9/2016 p.182
+# put into <git-repo>/hooks/post-receive and make executable
+
+import sys, os, subprocess
+from datetime import datetime
+
+oldrev, newrev, branch = sys.stdin.read().split()
+refs, head, branch = branch.split('/')
+
+deploy_to = None
+
+if branch == 'master':
+  deploy_to = '/var/www/myproject'
+elif branch == 'dev':
+  deploy_to = '/var/www/myproject'
+
+if deploy_to is not None:
+  with open('%s/deployment.log' % (deploy_to), 'a') as f:
+    f.write('[%s] updated %s from %s to %s\n'
+            % (datetime.now().isoformat(),
+              branch, oldrev, newrev))
+  subprocess.call(
+     'GIT_WORK_TREE=%s git checkout -f %s'
+     % (deploy_to, branch), shell=True)
