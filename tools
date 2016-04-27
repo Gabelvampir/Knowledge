@@ -1,4 +1,5 @@
-pqiv	-- image display
-scrot	-- screenshot commandline program (use i.e. -s -z)
-mupdf   -- fast pdf reader (on windows also part of SumatraPDF)
-latexmk -- perl script to build LaTeX documents correctly (use --pdf to get PDFs, -c to clean temp files and -C to also clean built PDFs)
+pqiv		--	image display
+scrot		--	screenshot commandline program (use i.e. -s -z)
+mupdf		--	fast pdf reader (on windows also part of SumatraPDF)
+latexmk		--	perl script to build LaTeX documents correctly (use --pdf to get PDFs, -c to clean temp files and -C to also clean built PDFs)
+ansiweather --	cli weather tool (https://github.com/fcambus/ansiweather)
