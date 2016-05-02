@@ -1,0 +1,1 @@
+convert -pointsize 50 -fill white -draw "text 0,150 'Schulungsrechner `echo $HOSTNAME`'" -gravity north fgn\ Wallpaper\ test.png test.png
