@@ -1,0 +1,3 @@
+-- to activate monitor modus (linux only) for capturing i.e. beacon frames for 802.11
+* (from aircrack-ng package) airmon-ng start wlan0 (does not work with every driver/HW)
+* capture on mon0
