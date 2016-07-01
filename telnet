@@ -1,0 +1,5 @@
+Check http with telnet:
+telnet SERVERNAME 80
+ GET / HTTP/1.1 [Enter]
+ HOST: HOSTNAME [Enter][Enter]
+Source: https://www.thomas-krenn.com/en/wiki/Check_TCP_Port_80_%28http%29_with_telnet
