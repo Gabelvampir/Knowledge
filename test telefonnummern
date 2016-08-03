@@ -1,0 +1,31 @@
+Testrufnummern
+
+Testrufnummern sind mitunter sehr praktisch um Telefone, Telefonanlagen und Leitungen überprüfen zu können.
+
+Natürlich kann man auch Ansagendienste oder Hotlines dafür mißbrauchen, doch die Betreiber dieser Dienste sind davon mit Sicherheit nicht besonders begeistert. Deswegen bitte ich alle hier bekannte und wenn möglich überprüfte Testnummern einzutragen, die idealerweise aus dem normalen Bereich des deutschen Festnetzes stammen.
+
+Testrufnummern mit Ansagen
+
+    0311 Diese Testnummer sagt den Netzbetreiber an (für Ortsgespräche)
+    0310 Diese Testnummer sagt den Netzbetreiber an (für Fernsgespräche)
+    089 72101099703 BlueSIP Testnummer mit Wartemusik 1)
+    089 72101099702 BlueSIP Testnummer mit Freiton2) 3)
+
+
+Testrufnummern für einen Echo-Test
+
+    089 72101099701 BlueSIP Echo-Test 4)
+
+
+Testrufnummern mit Rufnummernansage
+
+    0461 5056620 EVI von Versatel
+    0461 5056621 Rückrufservice von Versatel
+
+
+Kostenlose Servicenummern mit Sprachcomputer
+
+    0800 1507090 Fahrplanauskunft der Deutschen Bahn 5)
+    0800 9377546 Prüfplatz der HanseNet, Ansage der eigenen Rufnummer und DTMF-Test
+
+-- Quelle: http://wiki.ip-phone-forum.de/telefonie:testrufnummern
