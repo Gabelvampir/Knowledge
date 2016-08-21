@@ -1,2 +1,3 @@
+/h/youtube-dl.exe -r 1.5M -o "Doctor Who- The War Games Part 2 %(format)s.%(ext)s" --ffmpeg-location /c/Users/scotty/AppData/Local/JDownloader\ v2.0/tools/Windows/ffmpeg/x64/
 h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" --ffmpeg-location d:\ffmpeg\bin 
 h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" -f hd1 
