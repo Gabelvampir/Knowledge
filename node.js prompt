@@ -1,0 +1,46 @@
+Usage of node.js module prompt:
+-------------------------------
+var prompt = require('prompt')
+    , arr = [];
+
+function getAnother() {
+    prompt.get('number', function(err, result) {
+        if (err) done();
+        else {
+            arr.push(parseInt(result.number, 10));
+            getAnother();
+        }
+    })
+}
+
+function done() {
+    console.log(arr);
+}
+
+
+prompt.start();
+getAnother();
+---------------------------------------------------------
+Using only node.js builtins without additional modules:
+
+function prompt(question, callback) {
+    var stdin = process.stdin,
+        stdout = process.stdout;
+
+    stdin.resume();
+    stdout.write(question);
+
+    stdin.once('data', function (data) {
+        callback(data.toString().trim());
+    });
+}
+
+Use case:
+---------
+
+prompt('Whats your name?', function (input) {
+    console.log(input);
+    process.exit();
+});
+---------------------------------------------------------
+both from http://stackoverflow.com/questions/17837147/user-input-in-node-js
