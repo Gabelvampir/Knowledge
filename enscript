@@ -1,0 +1,2 @@
+enscript --header='||Page $% of $=' --margin=72:72:72:72 -1 --word-wrap --media=A4 -r -2 -G -o tmp.ps text.txt
+-- writes text to ps file as 2 column landscape pages with a nice header, page numbers in the header and wide margins

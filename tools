@@ -3,3 +3,4 @@ scrot		--	screenshot commandline program (use i.e. -s -z)
 mupdf		--	fast pdf reader (on windows also part of SumatraPDF)
 latexmk		--	perl script to build LaTeX documents correctly (use --pdf to get PDFs, -c to clean temp files and -C to also clean built PDFs), don't confure with latex-mk
 ansiweather --	cli weather tool (https://github.com/fcambus/ansiweather)
+enscript	--	better then a2ps for printing a text file (i.e. it does not break in the middle of a word)
