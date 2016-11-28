@@ -1,3 +1,4 @@
 gpg --keyserver hkp://keys.gnupg.net --search-keys "deußer"
 gpg --keyserver hkp://keys.gnupg.net --refresh-keys
 gpg --keyserver hkp://keys.gnupg.net --send-key 0F6D4325
+gpg --list-keys --fingerprint [scotty_d@gmx.net]
