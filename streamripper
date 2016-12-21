@@ -2,3 +2,8 @@ streamripper 'http://cerebrum.dnalounge.com:8001/mixtape/015.mp3' -D '%2q - %A -
 streamripper 'http://uwstream2.somafm.com:8000' -D '%A - %T' -o larger -t -T
 streamripper 'http://ice.somafm.com/xmasrocks' -D '%A - %T' -o larger -t -T
 streamripper 'http://sfstream1.somafm.com:2106' -D '%A - %T' -o larger -t -T
+#### XMas ####
+streamripper 'http://ice1.somafm.com/christmas-256-mp3' -D '%A - %T' -o larger -t -T -d "Christmas Lounge"
+streamripper 'http://ice1.somafm.com/xmasrocks-128-mp3' -D '%A - %T' -o larger -t -T -d "Christmas Rocks"
+streamripper 'http://ice1.somafm.com/xmasinfrisko-128-mp3' -D '%A - %T' -o larger -t -T -d "Xmas in Frisko"
+streamripper 'http://ice1.somafm.com/jollysoul-128-mp3' -D '%A - %T' -o larger -t -T -d "Jolly Ol' Soul"
