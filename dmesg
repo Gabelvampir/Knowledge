@@ -1,0 +1,1 @@
+sysctl kernel.dmesg_restrict=0 (allows non-root users to use dmesg)
