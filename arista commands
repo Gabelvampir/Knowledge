@@ -1,0 +1,2 @@
+sho running-config > scp:deusser@10.122.4.13/tmp/sw-core1
+ -- backs up running config over ssh
