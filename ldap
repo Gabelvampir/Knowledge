@@ -1,2 +1,6 @@
 ldapsearch -L -b cn=fg-networking.de -D cn=admin,cn=fg-networking.de -W -y olcRootPW -H ldaps://id.fg-networking.de |less
-
+ldapsearch -x -LLL -H ldaps://id.fg-networking.de -b cn=fg-networking.de -D "cn=admin,cn=fg-networking.de" -y olcRootPW "uid=*" | less
+-- zeigt Inhalt des fg-networking.de Baums mit allen Attributen an
+------------------------------------------------------------------
+values mit nicht-US-ASCII Zeichen werden in BASE64 angezeigt
+------------------------------------------------------------------

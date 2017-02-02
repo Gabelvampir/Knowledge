@@ -1,0 +1,2 @@
+perl -MMIME::Base64 -n -00 -e 's/\n +//g;s/(?<=:: )(\S+)/decode_base64($1)/eg;print'
+-- for usage with ldapsearch and pipe, from http://www.perlmonks.org/bare/?node_id=963814
