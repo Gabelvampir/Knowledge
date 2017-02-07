@@ -1,1 +1,10 @@
 set line-editor delete backspace
+set logout 0
+#
+set snmp access v3view security-model usm privacy exact read P4 write P4 notify P4
+set snmp community P4
+set snmp group v3view user emc security-model usm
+set snmp user emc authentication sha :7cbcbf579ba006d805e8db8ac733a69098268708b7a607d6c08e81c5: encryption aes privacy :5e9db2ae72936a1ec77641a28e37138a6eaa57e629218801f56c4978:
+set snmp view viewname P4 subtree 1
+#
+
