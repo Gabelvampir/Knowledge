@@ -1,1 +1,3 @@
+disable idletimeout
+############
 enable policy      #schaltet bei G2 geraeten enterasys style multiauth an
