@@ -6,3 +6,10 @@ enable policy      #schaltet bei G2 geraeten enterasys style multiauth an
 ############
 conf netlogin add mac-list default    #sonst funktioniert multiauth mac auth nicht
 #(alternativ im Policy Manager->Network->Switch->Authentication->MACAuth->Set Password Mask anhaken->apply
+############
+show netlogin session
+show policy rule
+show policy profile
+#anzeigen ob Policy Mangare rules umgestezt werden
+############
+
