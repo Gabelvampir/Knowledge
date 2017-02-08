@@ -12,4 +12,6 @@ show port egress
 show policy profile
 #anzeigen ob policy manager regeln (inkl contain to VLAN) umgestetzt werden)
 ############
+show radius   # pruefen ob NAC nach enforce benutzt wird
+############
 

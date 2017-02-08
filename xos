@@ -10,6 +10,8 @@ conf netlogin add mac-list default    #sonst funktioniert multiauth mac auth nic
 show netlogin session
 show policy rule
 show policy profile
-#anzeigen ob Policy Mangare rules umgestezt werden
+#anzeigen ob Policy Manager rules umgestezt werden
+############
+show radius   # pruefen ob NAC nach enforce benutzt wird
 ############
 
