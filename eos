@@ -14,4 +14,6 @@ show policy profile
 ############
 show radius   # pruefen ob NAC nach enforce benutzt wird
 ############
+show authentication  # anzeigen woher auth genommen wird (zB local, RADIUS)
+############
 
