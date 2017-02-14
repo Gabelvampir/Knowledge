@@ -1,1 +1,2 @@
 debuild -i -us -uc -S    (builds source package)
+pbuilder --build --buildresult . --debbuildopts "-sa" --basetgz /var/cache/pbuilder/base-xenial-i386.tgz kvkbd_0.6-3.dsc
