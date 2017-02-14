@@ -1,0 +1,1 @@
+tail -f /var/log/netdev.log | fgrep --line-buffered routerFGN
