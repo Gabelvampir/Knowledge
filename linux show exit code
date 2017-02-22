@@ -1,0 +1,2 @@
+echo $?
+-- see http://linuxcommando.blogspot.de/2008/03/how-to-check-exit-status-code.html
