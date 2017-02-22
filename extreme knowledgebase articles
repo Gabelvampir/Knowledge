@@ -1,0 +1,10 @@
+Netsight:
+-----------------------------------------------------------------------------------------------
+https://extremeportal.force.com/ExtrArticleDetail?n=000007133 (reset DB to initial state)
+https://extremeportal.force.com/ExtrArticleDetail?n=000011483 (recreate DB with MySQL commands)
+https://extremeportal.force.com/ExtrArticleDetail?n=000010005 (how to get MySQL CLI access)
+https://gtacknowledge.extremenetworks.com/articles/How_To/How-to-restore-a-Netsight-Database (How to restore DB backups (Java))
+https://gtacknowledge.extremenetworks.com/articles/How_To/How-to-backup-a-Netsight-Database-using-Console (How to backup DB (Java))
+https://gtacknowledge.extremenetworks.com/articles/Solution/Common-Issues-Unable-to-connect-to-NetSight-Server-Error (Ports Netsight needs access to through firewall)
+Backup/Restore on WebGUI: Administration->Backup->Buttons: Back Up/Restore (bottom of frame)
+===============================================================================================
