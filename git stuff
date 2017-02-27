@@ -35,3 +35,11 @@ caches credentials for 10 hours
 * then: git remote set-url origin --push --add URL2
 * rinse and repeat for all remotes
 * result can be checked with: git remote -v show
+
+
+--unstaging files from commit (undo for git add)--
+git reset HEAD CONTRIBUTING.md
+
+
+--git docu for undoing stuff--
+https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things
