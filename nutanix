@@ -4,4 +4,6 @@ To enable the script, run this command on any CVM:
 We can then periodically check the progress of the script with command:
     allssh "grep Offset data/logs/fix_time_drift.log | tail -n 5"
 -- Nutanix support
-
+=============================================
+known issues:
+as of AOS 5.0 Nutanix only PST timezone is supported
