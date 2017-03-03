@@ -1,2 +1,4 @@
 https://bst.cloudapps.cisco.com/bugsearch/     -- Cisco (Firmware) Bug Search Tool
 http://ciscoarchive.lunaimaging.com            -- Archive of old Cisco Equipment brochures and flyers
+http://networkdirection.net/ICMP+Inspection    -- Article on ICMP inspection on the ASA
+http://www.cisco.com/c/en/us/td/docs/security/asa/asa82/command/reference/cmd_ref/i1.html   -- ASA icmp command reference
