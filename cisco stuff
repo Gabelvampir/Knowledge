@@ -2,5 +2,5 @@ https://bst.cloudapps.cisco.com/bugsearch/     -- Cisco (Firmware) Bug Search To
 http://ciscoarchive.lunaimaging.com            -- Archive of old Cisco Equipment brochures and flyers
 http://networkdirection.net/ICMP+Inspection    -- Article on ICMP inspection on the ASA
 http://www.cisco.com/c/en/us/td/docs/security/asa/asa82/command/reference/cmd_ref/i1.html   -- ASA icmp command reference
-https://mellowd.co.uk/ccie/?p=3928  --  Use revert instead of reload in
-http://packetpushers.net/cisco-configuration-archive-rollback-using-revert-instead-of-reload/  -- More on revert and archive
+https://mellowd.co.uk/ccie/?p=3928             --  Use revert instead of reload in
+http://packetpushers.net/cisco-configuration-archive-rollback-using-revert-instead-of-reload    -- More on revert and archive
