@@ -5,3 +5,4 @@ latexmk		--	perl script to build LaTeX documents correctly (use --pdf to get PDF
 ansiweather --	cli weather tool (https://github.com/fcambus/ansiweather)
 enscript	--	better then a2ps for printing a text file (i.e. it does not break in the middle of a word)
 i7z			--	reporting tool for i7, i5, i3 CPUs
+lsblk
