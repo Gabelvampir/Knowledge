@@ -1,3 +1,9 @@
+(Windows version) commands for SF Debris downloads
+--------------------------------------------------
 /h/youtube-dl.exe -r 1.5M -o "Doctor Who- The War Games Part 2 %(format)s.%(ext)s" --ffmpeg-location /c/Users/scotty/AppData/Local/JDownloader\ v2.0/tools/Windows/ffmpeg/x64/
 h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" --ffmpeg-location d:\ffmpeg\bin 
-h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" -f hd1 
+h:\youtube-dl -r 1.5M -o "Ghostbusters Part 1 %(format)s.%(ext)s" -f hd1
+===============================================================================
+udemy course download sorted into lecture folder structure (adapted from youtube-dl docu)
+-----------------------------------------------------------------------------------------
+youtube-dl -u "scotty_d@gmx.net" -o './%(playlist)s/%(chapter_number)s - %(chapter)s/%(title)s.%(ext)s' https://www.udemy.com/ccnpallinone
