@@ -5,7 +5,7 @@
 # =============================================================================
 
 from os import system, rename, remove, getenv, getpid, \
-    read, write, close, fsync, lseek, getcwd
+    read, write, close, fsync, lseek, getcwd, remove
 from os.path import expanduser, isfile, isdir, abspath, islink
 from sys import argv, exit, stdout, stderr
 from getopt import getopt, GetoptError
@@ -285,15 +285,18 @@ class Renamer:
             if now.seen > 0:
                 # create a temporary file name to break a circular renaming
                 # file must be on the same filesystem!
-                tempFile = NamedTemporaryFile(dir=getcwd())
-                tempNode = RenamingNode(tempFile.name)
+                tmpfd, tmpfilename = mkstemp(dir=getcwd())
+                close(tmpfd)
+                if isfile(tmpfilename):
+                  remove(tmpfilename)
+                tmpnode = RenamingNode(tmpfilename)
                 wasto = now.tofile
-                self.list.append(tempNode)
-                self.setfromfile(tempNode, now)
-                self.execute(tempNode)
+                self.list.append(tmpnode)
+                self.setfromfile(tmpnode, now)
+                self.execute(tmpnode)
 
-                self.list.append(tempNode)
-                self.settofile(tempNode, wasto)
+                self.list.append(tmpnode)
+                self.settofile(tmpnode, wasto)
                 return # re-iterate
 
         # 'now' is now the last renaming in its chain (now.tofile == null)
@@ -423,7 +426,7 @@ if __name__ == '__main__':
                 sched += "\n%s -> %s" % (i.frm, i.to)
             print "error detected. moving schedule was: %s" % sched
             giveup("Could not rename %s to %s: %s\n** RENAMING INTERRUPTED **" \
-                % (i.frm, i.to, str(e)))
+                % (i.frm, i.to, e))
           
     exit(0)
 
