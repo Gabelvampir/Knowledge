@@ -6,3 +6,4 @@ https://mellowd.co.uk/ccie/?p=3928             --  Use revert instead of reload 
 http://packetpushers.net/cisco-configuration-archive-rollback-using-revert-instead-of-reload    -- More on revert and archive
 https://www.m00nie.com/2011/09/cisco-pipe-options-and-some-regex-examples    -- Cisco pipe regex examples
 http://www.netcraftsmen.com/understanding-cisco-traffic-storm-control	-- blogpost about how storm-control works
+http://tech.jocke.no/2010/10/21/cisco-ios-clock-sync-with-ntp-and-summer-timedaylight-saving-time/	-- blogpost about timezones, NTP, timestamps etc
