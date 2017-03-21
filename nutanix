@@ -10,3 +10,47 @@ as of AOS 5.0 Nutanix only PST timezone is supported
 =============================================
 http://nutanixbible.com/				-- the Nutanix Bible
 http://myvirtualcloud.net/nutanix/		-- the Nutanix Index
+=============================================
+Half-official obscure procedure to change cluster IPs to different subnet (probably to dangerous to do untested on a production cluster)
+
+Before you begin:
+
+1. Make sure that the NTP and DNS are correct, you can check them in Prism.
+2. Log on to a Controller VM in the cluster and check that all hosts are part of the metadata store:
+nutanix@cvm$ ncli host ls | grep "Metadata store status"
+3.Stop the Nutanix cluster:
+cluster stop
+4. Put the cluster in reconfiguration mode:
+cluster reconfig
+
+Changing the CVM address (do not reboot or restart the CVMs until all IP addresses are changed)
+1. Log on to ESXi with SSH
+2. Connect to the CVM from ESXi:
+ssh nutanix@192.168.5.254
+3. Run "genesis restart"
+4. Open the network interface configuration file and change the IP addresses. You can find the configuration file in the following location: /etc/sysconfig/network-scripts/ifcfg-eth0 (you can use vi or nano to make the changes)
+5. Update the IP addresses of the Zookeeper hosts
+  - First verify the change is possible with the following command: edit-zkmapping check_can_modify_zk_map
+  - Change the IP addresses: edit-zkmapping modify_zk_server_config
+  - Verify the Zookeeper again: edit-zkmapping check_can_modify_zk_map
+
+  
+Before proceeding with the next step change the ESXi IP addresses
+- once you are done with the ESXi IP changes, reboot each CVM with the following command: "sudo reboot"
+
+Completing the CVM IP address change:
+1. Log on the CVM with SSH
+2. Take the CVM out of reconfiguration mode:
+rm ~/.node_reconfigure
+3. Run "genesis restart"
+4. After all the steps start the cluster from any CVM:
+cluster start
+
+
+After finishing all the above steps proceed with the IPMI changes.
+
+
+If you follow the procedure above I do not expect any issues with the IP change.
+
+-- Nutanix support on our support case 00140705
+=============================================
