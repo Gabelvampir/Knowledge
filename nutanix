@@ -54,3 +54,104 @@ If you follow the procedure above I do not expect any issues with the IP change.
 
 -- Nutanix support on our support case 00140705
 =============================================
+----[ start ]----
+A. Pre-change verification / adjustment
+  1. Verify that the DNS server is reachable using both old and new addresses
+     [normal documentation asks to remove the DNS server if it will not be
+      usable after the change]
+     ncli cluster get-name-servers
+  2. Verify that the NTP server is reachable using both old and new addresses
+     [normal documentation asks to remove the DNS server if it will not be
+      usable after the change]
+     ncli cluster get-ntp-servers
+  3. Verify that the "metadata store" is enabled on all nodes:
+     [on one CVM] ncli host ls | grep "Metadata store status"
+
+B. Prepare cluster for reconfiguration
+  1. Stop cluster
+     [on one CVM] cluster stop
+  2. Put cluster into reconfiguration mode
+     [on one CVM] cluster reconfig
+  3. Wait for Genesis to await configuration via RPC
+     [on one CVM] allssh tail -n1 /home/nutanix/data/logs/genesis.out
+     Executing tail -n1 /home/nutanix/data/logs/genesis.out on the cluster
+     ================== 10.200.101.10 =================
+     2017-03-23 00:38:41 INFO node_manager.py:5191 Waiting for node to become configured through RPC.
+     Connection to 10.200.101.10 closed.
+     ================== 10.200.101.11 =================
+     2017-03-23 00:38:38 INFO node_manager.py:5191 Waiting for node to become configured through RPC.
+     Connection to 10.200.101.11 closed.
+     ================== 10.200.101.7 =================
+     2017-03-23 00:39:33 INFO node_manager.py:5191 Waiting for node to become configured through RPC.
+     Connection to 10.200.101.7 closed.
+     ================== 10.200.101.8 =================
+     2017-03-23 00:39:34 INFO node_manager.py:5191 Waiting for node to become configured through RPC.
+     Connection to 10.200.101.8 closed.
+     ================== 10.200.101.9 =================
+     2017-03-23 00:38:37 INFO node_manager.py:5191 Waiting for node to become configured through RPC.
+     Connection to 10.200.101.9 closed.
+
+C. Change the IP address configuration of all CVMs
+  1. For each node in the cluster
+    a. Log on to hypervisor host
+    b. Connect to the local CVM via internal network
+       ssh nutanix@192.168.5.254
+    c. Change CVM network configuration to new IP address
+       sudoedit /etc/sysconfig/network-scripts/ifcfg-eth0
+       [this change will not take effect until restarting the CVM network,
+        which will be done by rebooting in step F]
+
+D. Update the IP addresses of the Zookeeper hosts
+  1. On one CVM
+   a. edit-zkmapping check_can_modify_zk_map
+   b. edit-zkmapping modify_zk_server_config
+      [this automatically sets the new IP addresses from step C]
+   c. edit-zkmapping check_can_modify_zk_map
+
+E. Change all hypervisor host IP addresses
+  1. For each node in the cluster
+    a. Follow the hypervisor documentation to change the IP address
+       [This includes an "/etc/init.d/network restart" on AHV]
+       [Use Nutanix internal network to change ESXi IP & gateway via esxcli]
+       esxcli network ip interface ipv4 set -i vmk0 -I 192.168.121.X -N 255.255.255.128 -t static
+       esxcli network ip route ipv4 add -g 192.168.121.1 -n default
+
+F. Reboot all CVMs
+  1. For each node in the cluster
+    a. Log on to CVM and reboot the CVM
+       sudo reboot
+
+G. Take all CVMs out of reconfiguration mode
+  1. For each node in the cluster
+    a. Log on to CVM
+    b. Take CVM out of reconfiguration mode
+       [on each CVM] rm -v ~/.node_reconfigure
+    c. Restart genesis
+       [on each CVM] genesis restart
+    d. Wait long enough for genesis to restart
+       [on one CVM] sleep 5m
+    e. Check cluster status (should return state 'stop' and 'success' at end)
+
+H. Start the cluster
+  1. [on one CVM] cluster start
+
+I. Change virtual cluster address
+  1. Log on to Prism
+  2. Open "Cluster Details" from gears menu and change the virtual IP
+
+J. Change all IPMI IP addresses
+  1. For each node in the cluster
+    a. Log on to hypervisor host
+    b. use ipmitool to reconfigure IPMI IP address
+       ipmitool lan print 1
+       ipmitool lan set 1 ipaddr 192.168.121.X
+       ipmitool lan set 1 netmask 255.255.255.128
+       ipmitool lan set 1 defgw ipaddr 192.168.121.1
+       [use /ipmitool on ESXi, ipmitool on AHV]
+
+K. If necessary, remove old DNS & NTP server
+
+L. Verify the cluster works
+----[ end ]----
+-- Erik's actually working version of that procedure
+=============================================
