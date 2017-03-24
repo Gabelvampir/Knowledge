@@ -1,1 +1,4 @@
-:f				-- show filename
+:f					-- show filename
+:set fileencoding	-- show fileencoding
+===============================================================================
+when doing s// substitution, to get a newline substitute with \r
