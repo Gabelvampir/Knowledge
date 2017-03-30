@@ -155,3 +155,10 @@ L. Verify the cluster works
 ----[ end ]----
 -- Erik's actually working version of that procedure
 =============================================
+How to exit cluster reconfigure
+
+- Log on to the Controller VM with SSH.
+- Take the Controller VM out of reconfiguration mode.
+      nutanix@cvm$ rm ~/.node_reconfigure
+- Restart genesis. nutanix@cvm$ genesis restart
+=============================================
