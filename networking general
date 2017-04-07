@@ -1,0 +1,38 @@
+Networking general and misc/multi vendor stuff
+==============================================
+run cable test on various switches (TDR=Time-Domain Reflectometer):
+Cisco: 
+TDR is built-in to IOS...went way too long in my career without knowing about this.
+https://supportforums.cisco.com/document/74231/how-use-time-domain-reflectometer-tdr
+TL;DR :
+    Switch#: test cable tdr interface <int>
+    Switch#: show cable tdr interface <int>    
+
+Juniper: 
+Also available in Junos:
+	me@myswitch> request diagnostics tdr start interface ge-2/0/1
+
+...tum-te-tum, twiddle your fingers for a minute or two, wait for the diags to complete...
+
+	me@myswitch> show diagnostics tdr interface ge-2/0/1
+
+Brocade:
+Brocade (at least the FCX switches) have it too:
+	SSH@SWITCH-1234# phy cable-diagnostics tdr 1/1/21
+Results:
+	SSH@SWITCH-1234# show cable-diagnostics tdr 1/1/21
+
+Useful on occasion. Sometimes just refuses to work for us on the Brocades, reason unknown, so we don't rely on it heavily.
+
+Avaya:
+	tdr test "port#"
+	show tdr "port#"
+
+Aruba Switches:
+	(host) (config)# run diagnostics interface gigabitethernet <slot/module/port> cable    
+Aruba 3810s and 5400R v3 blades : http://h22208.www2.hpe.com/eginfolib/networking/docs/switches/K-KA-KB/16-01/5200-0137_MCG/content/apc.html
+Couldn't find anything for procurves.
+That also works on the S2500's.
+
+-- from https://www.reddit.com/r/networking/comments/63lfl9/run_cable_tests_from_your_cisco_switches/
+=========================================================================================================
