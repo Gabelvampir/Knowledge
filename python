@@ -1,0 +1,5 @@
+string specials (Py2 only):
+---------------------------
+a = r'whatever'   creates a raw string (does not interpret i.e. \n)
+a = u'whatever'   creates a unicode string
+===============================================================================
