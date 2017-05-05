@@ -1,0 +1,8 @@
+Activate developer options:
+---------------------------
+Settings -> About phone/tablet -> tap quickly about 7 time on the build number -> say yes
+===============================================================================
+Show MACs etc in WiFi Overview:
+-------------------------------
+Settings -> Developer Options -> Networking -> Enable Wi-Fi verbose logging
+===============================================================================
