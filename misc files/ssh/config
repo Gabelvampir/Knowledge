@@ -1,0 +1,139 @@
+Compression=yes
+Protocol=2
+
+Host gnocchi
+   Hostname gnocchi.unix-ag.uni-kl.de
+   User deusser
+
+Host sushi
+   Hostname sushi.unix-ag.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host fettuccini
+   Hostname fettuccini.unix-ag.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host schnitzel
+   Hostname schnitzel.unix-ag.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host borneo
+   Hostname borneo.mv.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host sumatra
+   Hostname sumatra.mv.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host vm-vpe
+   Hostname vm-vpe.mv.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host sphere
+   Hostname sphere.dyn-o-saur.com
+   CheckHostIP=no
+   ForwardX11=yes
+   User scotty
+
+Host tux1
+   Hostname tux1.informatik.uni-kl.de
+   ForwardX11=yes
+   User s_deusse
+
+Host cube
+#   Hostname exile.dyndns.info
+#   Hostname flameriver.dyndns.info 
+   Hostname flameriver.privatedns.org
+   ForwardX11=yes
+   User scotty
+   Port 2022
+
+Host brei
+   Hostname brei.unix-ag.uni-kl.de
+   ForwardX11=yes
+   User deusser
+
+Host jupiter
+   Hostname jupiter.informatik.uni-kl.de
+   User deusser
+
+Host venus
+   Hostname venus.informatik.uni-kl.de
+   User deusser
+
+Host rhrk
+	Hostname lindb.rhrk.uni-kl.de
+	User sdeusser
+
+Host router
+   Hostname flameriver.privatedns.org 
+   ForwardX11=no
+   User root
+   Port 22
+
+Host seilbahn
+  Hostname seilbahn.hsg-kl.de
+  User root
+
+Host spielwiese
+  Hostname spielwiese.hsg-kl.de
+  User root
+
+Host hamsterrolle
+  Hostname hamsterrolle.hsg-kl.de
+  User root
+
+Host kletterturm
+  Hostname kletterturm.hsg-kl.de
+  User root
+
+Host sandkasten
+  Hostname sandkasten.hsg-kl.de
+  User root
+
+Host pausenbrot
+  Hostname pausenbrot.unix-ag.uni-kl.de
+  User root
+  IdentityFile ~/.ssh/fettuccini_id_rsa
+
+Host sw-acc1
+  Hostname 10.122.0.7
+  User admin
+  KexAlgorithms +diffie-hellman-group1-sha1
+
+Host sw-core1
+  Hostname 10.122.0.2
+  
+Host sw-core2
+  Hostname 10.122.0.3
+  
+Host sw-srv1
+  Hostname 10.122.0.5
+  KexAlgorithms +diffie-hellman-group1-sha1
+  HostKeyAlgorithms +ssh-dss
+  
+Host sw-srv2
+  Hostname 10.122.0.6
+  KexAlgorithms +diffie-hellman-group1-sha1
+  HostKeyAlgorithms +ssh-dss
+  
+Host fgn-apc1
+  Hostname 172.28.28.241
+  User admin
+  KexAlgorithms +diffie-hellman-group1-sha1
+  
+Host fgn-apc2
+  Hostname 172.28.28.242
+  User admin
+  KexAlgorithms +diffie-hellman-group1-sha1
+  
+Host fgn-apc3
+  Hostname 172.28.28.243
+  User admin
+  KexAlgorithms +diffie-hellman-group1-sha1
