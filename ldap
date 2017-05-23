@@ -3,6 +3,8 @@ ldapsearch -x -LLL -H ldaps://id.fg-networking.de -b cn=fg-networking.de -D "cn=
 -- zeigt Inhalt des fg-networking.de Baums mit allen Attributen an
 ===============================================================================
 values mit nicht-US-ASCII Zeichen werden in BASE64 angezeigt
+on the fly dekodierung zB für ldapsearch:
+ldapsearch -x -LLL -H ldaps://id.fg-networking.de -b cn=fg-networking.de -D "cn=admin,cn=fg-networking.de" -y olcRootPW | perl -MMIME::Base64 -n -00 -e 's/\n +//g;s/(?<=:: )(\S+)/decode_base64($1)/eg;print'
 ===============================================================================
 Passwort ändern:
 ----------------
