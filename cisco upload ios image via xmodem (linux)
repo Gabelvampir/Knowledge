@@ -1,0 +1,84 @@
+ Upload an IOS Image Via XModem
+
+If you find yourself without an IOS on a switch during a reboot, you will need to transfer an image using Xmodem.
+
+Download the image from TFTP to your computer:
+
+    tftp <tftp server ip>
+    get <image name>
+    quit
+
+NOTE: You do NOT want to use a .tar package with Xmodem. Only use .bin images. If only a .tar image is available, extract the .bin to your computer.
+
+Download and install Minicom to your computer:
+
+    sudo aptitude install minicom
+
+    Configure Minicom:
+
+    sudo minicom -s
+
+    Filenames and paths
+        B (this lets you set the directory to upload from for xmodem)
+        Type in the directory path to the IOS image.
+    Serial port setup
+        Press A
+        Type in the path to your serial device (most likely /dev/ttyUSB0)
+        Press E
+        Press C
+    Save setup as dfl
+    Exit
+
+Upload the IOS Image
+
+    You should now be at a switch: prompt. If so, make sure there is enough room for the new image in flash:
+
+    dir flash:
+
+    If not,
+
+    format flash:
+
+    Power down, power back up.
+    Change the baud rate to 115200:
+
+    set BAUD 115200
+
+    The session should stop responding. No big deal.
+        Ctrl-A then Z.
+        Press Q
+    Console in at 115200 baud.
+
+    minicom -b 115200
+
+    Now, get ready to copy over the new image. (Go grab a cup of coffee, because this is going to take a long time.)
+
+    copy xmodem:<image name> flash:<image name>
+
+    Press Ctrl-A then Z
+    Press S
+    Select xmodem
+    Select the IOS with space
+    Press Enter
+    The file transfer will start. It will take a long time.
+    When it finishes, change the baud back to 9600
+
+    set BAUD 9600
+
+Your session should stop responding. If it does not:
+
+    unset BAUD 115200
+
+    Exit Minicom and reconnect again:
+        Ctrl-A then Z
+        Press Q
+
+    minicom
+
+    Try to boot from the new image:
+
+    boot flash:<image name>
+
+You should now boot into full IOS.
+
+-- from https://ericrochow.wordpress.com/2012/09/29/upload-an-ios-image-via-xmodem/
