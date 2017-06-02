@@ -6,3 +6,4 @@ ansiweather --	cli weather tool (https://github.com/fcambus/ansiweather)
 enscript	--	better then a2ps for printing a text file (i.e. it does not break in the middle of a word) (example enscript -2 -G -j -r -X latin1 -p ../Gesamt.ps ../Gesamt.txt)
 i7z			--	reporting tool for i7, i5, i3 CPUs
 lsblk
+inxi		--	tool with nicely coloured output for infos about hardware, IPs and weather
