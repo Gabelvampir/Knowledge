@@ -2,3 +2,21 @@ Netsight Database:	netsight(DB) netsight(user) enterasys(password)
 Extreme Wireless Controller: admin/root abc123 (Webfrontend-URL https://ewcIP:5825)
 Extreme Wireless APs SSH Access: admin new2day
 Cisco Wireless APs Console (SSH?) Access: Cisco Cisco Cisco(enable PW)
+===============================================================================
+Nutanix:
+--------
+Interface						Target									Username		Password
+Nutanix Prism					Nutanix Controller VM (CVM)				admin			admin
+vSphere client					ESXi host								root			nutanix/4u
+vSphere client (acc. to docu)	ESXi host								administrator	nutanix/4u
+SSH client or console 			ESXi host								root			nutanix/4u
+SSH client or console			AHV host								root			nutanix/4u
+SSH client						Nutanix Controller VM (CVM)				nutanix			nutanix/4u
+IPMI web interface or ipmitool	Nutanix node							ADMIN			ADMIN
+IPMI web interface or ipmitool	Nutanix node (NX-3000 only) 			admin			admin
+SSH client or console			Hyper-V host							Administrator	nutanix/4u
+SSH client or console			Acropolis OpenStack Services VM (OVM) 	root			admin
+-- from https://www.virtualdennis.com/nutanix-default-cluster-credentials/ and 
+   https://portal.nutanix.com/#/page/docs/details?targetId=NOS_Advanced_Administration-NOS_v4_0:req_credentials_r.html
+===============================================================================
+/* vim: set ts=4 sw=4 tw=0 noet :*/
