@@ -18,3 +18,26 @@ Ebay dealers for lab equipment (Cisco etc): tonitrus-de, www_cybertrading_de
 notes:
 ------
 learning AWS via acloud.guru
+===============================================================================
+Erik book tips:
+---------------
+buchempfehlungen...
+- OSPF und IS-IS: OSPF and IS-IS: Choosing an IGP for Large-Scale Networks: Choosing an IGP for Large-Scale Networks (hat fgn)
+- BGP: Routing TCP/IP Vol.2 2nd Edition
+- MPLS: MPLS in the SDN Era
+    das MPLS Buch setzt IS-IS und BGP Wissen voraus
+
+-bei VRF muss man hauptsächlich zwischen der kombination aus MPLS, BGP und VRF auf der einen seite und VRF-Lite ohne MPLS und ohne eingrenzung auf BGP unterscheiden
+
+d.h. "VRF" - speziell aus Cisco sicht - bedeutet eine spezielle kombination von features zur implementierung von layer 3 VPNs auf basis von BGP, MPLS und der assoziation von logischen 
+interfaces mit routing tabellen
+
+die trennung der VRFs ist relativ schwach, stichwort "route leaking" (in diesem kontext, den begriff gibt es auch in IS-IS mit ähnlicher, aber nicht identischer bedeutung)
+
+nach dem BGP buch und vor dem MPLS buch eventuell noch einen Cisco Live vortrag ansehen: BRKMPL-1100 - Introduction to MPLS
+
+VRF-Lite kam _nach_ VRF, als jemand erkannte, dass man die VRF idee auf generelles IP routing&forwarding verallgemeinern kann
+
+das ist heutzutage ueberraschend, weil man VRF-Lite als einen baustein für VRF/BGP/MPLS betrachten kann und es somit logisch vor der speziellen variante mit MPLS etc. kommt
+
+- Routing TCP/IP, Volume 1, 2nd Edition könnte auch interessant sein, habe ich aber noch nicht, kann es also noch nicht empfehlen
