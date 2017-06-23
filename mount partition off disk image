@@ -1,0 +1,30 @@
+Get the partition layout of the image
+-------------------------------------
+$ sudo fdisk -lu sda.img
+...
+Units = sectors of 1 * 512 = 512 bytes
+Sector size (logical/physical): 512 bytes / 512 bytes
+...
+  Device Boot      Start         End      Blocks   Id  System
+sda.img1   *          56     6400000     3199972+   c  W95 FAT32 (LBA)
+
+
+Calculate the offset from the start of the image to the partition start
+-----------------------------------------------------------------------
+Sector size * Start = (in the case) 512 * 56 = 28672
+
+Mount it on /dev/loop0 using the offset
+---------------------------------------
+sudo losetup -o 28672 /dev/loop0 sda.img
+
+Now the partition resides on /dev/loop0. You can fsck it, mount it etc
+
+sudo fsck -fv /dev/loop0
+sudo mount /dev/loop0 /mnt
+
+Unmount
+-------
+sudo umount /mnt
+sudo losetup -d /dev/loop0
+
+-- from https://askubuntu.com/questions/69363/mount-single-partition-from-image-of-entire-disk-device
