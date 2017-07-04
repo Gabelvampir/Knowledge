@@ -1,0 +1,1 @@
+ssh-keygen -f "/home/deusser/.ssh/known_hosts" -R 2001:638:208:c001:0:ff:fe00:242
