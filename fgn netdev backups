@@ -1,0 +1,20 @@
+sw-srv1+2 (Extreme Summit X450e-24p, EXOS 15.3.5.2):
+----------------------------------------------------
+files kopieren (notwendig fuer primary.cfg) auf dem Switch, Empfänger muss 3DES oder Blowfish unterstützen):
+scp2 vr "VR-Default" primary.cfg deusser@10.122.4.13:git/fgn-netdev-config/sw-srv1.cfg
+
+Text Konfig von remote aulesen:
+ssh admin@sw-srv1 show config | sed "s/\r//" > sw-srv1.xsf
+===============================================================================
+sw-core1+2 (Arista DCS-7050T-64-R, EOS 4.14.16M):
+-------------------------------------------------
+von remote aus:
+ssh sw-core1 show startup-config  > sw-core1.cfg
+===============================================================================
+von remote:
+ssh admin@10.122.4.1 export compact > router.rsc
+
+alternativ: 
+1) mit gnome-terminal 80 Zeichen breite per ssh einloggen
+2) export compact aufrufen
+3) per copy & paste in die Backup Datei kopieren
