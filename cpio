@@ -1,0 +1,6 @@
+Extract:
+cpio -i -t < initrd   (list contents)
+cpio -i < initrd
+
+Create initrd from working directory:
+find ./ | cpio -H newc -o > ../initrd (then gzip and copy to right place)
