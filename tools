@@ -13,3 +13,7 @@ inxi		--	tool with nicely coloured output for infos about hardware, IPs and weat
 windows:
 --------
 tzutil		--	timezone util (/g current tz, /s set tz, /l list all tz)
+===============================================================================
+linux interesting but unpractical stuff:
+----------------------------------------
+https://github.com/hyper-pokemon/hyper-star-wars
