@@ -1,2 +1,3 @@
-apt-get update && apt-get upgrade && apt-get dist-upgrade && apt-get clean
+apt-get update && apt-get upgrade && apt-get dist-upgrade && apt-get clean && apt-get autoremove --purge
 aptitude update && aptitude safe-upgrade && apt-get clean
+rm -fv /var/lib/apt/lists/ftp.uni-kl.de_debian-local_dists_jessie-unikl_* /var/lib/apt/lists/partial/* ; apt-get update ; apt-get upgrade && apt-get dist-upgrade && apt-get clean && apt-get autoremove --purge
