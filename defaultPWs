@@ -19,4 +19,8 @@ SSH client or console			Acropolis OpenStack Services VM (OVM) 	root			admin
 -- from https://www.virtualdennis.com/nutanix-default-cluster-credentials/ and 
    https://portal.nutanix.com/#/page/docs/details?targetId=NOS_Advanced_Administration-NOS_v4_0:req_credentials_r.html
 ===============================================================================
+Cumulus VX VM:
+--------------
+User name: cumulus       Password: CumulusLinux!
+===============================================================================
 /* vim: set ts=4 sw=4 tw=0 noet :*/
