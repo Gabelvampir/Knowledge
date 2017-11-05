@@ -2,5 +2,13 @@ sueddeutsche.de:
 ----------------
 @@||sueddeutsche.de/*ad
 @@||sueddeutsche.de^$generichide
+-- Easy List Germany Forum: https://forums.lanik.us/viewforum.php?f=90&sid=b1a2d22c6acfced5f9819ababf41e53c
 ===============================================================================
-Easy List Germany Forum: https://forums.lanik.us/viewforum.php?f=90&sid=b1a2d22c6acfced5f9819ababf41e53c
+wikia.com:
+----------
+@@||wikia.com^$elemhide
+@@||fastly.net$domain=wikia.com
+@@||ad.doubleclick.net^$image,domain=wikia.com
+(needs also scripts from adumen.com)
+-- Adblock solutions: https://help.getadblock.com/support/solutions/articles/6000164331-custom-filters-for-wikia-com
+===============================================================================
