@@ -9,6 +9,7 @@ enscript	--	better then a2ps for printing a text file (i.e. it does not break in
 i7z			--	reporting tool for i7, i5, i3 CPUs
 lsblk		--	list block devices with tree output for partitions, optional JSON output, etc
 inxi		--	tool with nicely coloured output for infos about hardware, IPs and weather
+iftop		--	like top, but for network traffic
 ===============================================================================
 windows:
 --------
