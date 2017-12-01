@@ -6,3 +6,6 @@ when doing s// substitution, to get a newline substitute with \r
 ===============================================================================
 https://mkrmr.wordpress.com/2010/05/14/vim-tip-visual-block-editing/	-- blog on block editing
 ===============================================================================
+Inserting a "=" character 80 times (in command mode):
+80 a = Esc a
+===============================================================================
