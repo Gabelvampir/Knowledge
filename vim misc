@@ -9,3 +9,8 @@ https://mkrmr.wordpress.com/2010/05/14/vim-tip-visual-block-editing/	-- blog on 
 Inserting a "=" character 80 times (in command mode):
 80 a = Esc a
 ===============================================================================
+:%s/\s\+$//e  --  remove trailing whitespace
+:%s/^\s\+//e  --  remove leading whitespace
+" Same thing (:le = :left = left-align given range; % = all lines):
+:%le
+===============================================================================
