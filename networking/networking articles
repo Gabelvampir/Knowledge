@@ -47,3 +47,8 @@ VRF-Lite kam _nach_ VRF, als jemand erkannte, dass man die VRF idee auf generell
 das ist heutzutage ueberraschend, weil man VRF-Lite als einen baustein für VRF/BGP/MPLS betrachten kann und es somit logisch vor der speziellen variante mit MPLS etc. kommt
 
 - Routing TCP/IP, Volume 1, 2nd Edition könnte auch interessant sein, habe ich aber noch nicht, kann es also noch nicht empfehlen
+===============================================================================
+Routing TCP/IP Vol. 1 Recommended Reading:
+------------------------------------------
+Perlman, Radia - Interconnections: Bridges and Routers (1992) [Chapter 1 1st Ed.]
+===============================================================================
