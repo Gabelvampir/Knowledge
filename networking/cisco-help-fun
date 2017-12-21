@@ -1,0 +1,5 @@
+RP/0/RSP0/CPU0:ios-xr#show bgp ipv4 unicast ?
+                        .
+                        .
+                        .
+  cidr-only              Display only routes with non-natural netmasks
