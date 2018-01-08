@@ -1,0 +1,1 @@
+robocopy /MIR /ETA /DCOPY:T /Z /R:0 /W:0 /UNILOG+:h:\DatenE.log /TEE /UNICODE e:\ q:\
