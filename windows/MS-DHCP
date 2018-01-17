@@ -1,0 +1,7 @@
+MS-DHCP (at least did til 1999) tries renewing IP at 50% 83% 100% and 110% of lease time, also stores last DHCP lease info in registry and tries renewing at each reboot.
+
+Original Redsdit post:
+Having spent 2.5 years on a DHCP project down to the protocol level for a quarter of a million clients, this is one of the few times this info will come in handy...
+As of 1999 when the project was, MS DHCP-enabled clients would look to renew the least at 50%, 83%, 100% and even 110% of lease time (they ignored the RFC at this point as 110% definitely isn’t in the RFC as you’d expect). They also stored the last DHCP lease information in the registry. You would also find they would attempt to renew every time they booted (which is not required in the RFC), hence they contact the DHCP servers more often than you’d think.
+Be aware though, the DHCP options are in a different network packet to the basic IP address, and hence you might find some implementations don’t renew options when they renew the lease at intervals.
+-- https://www.reddit.com/r/networking/comments/7qtea1/prompt_clients_to_initiate_dhcp_request/dssadkp/
