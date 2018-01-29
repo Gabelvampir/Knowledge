@@ -11,6 +11,7 @@ lsblk		--	list block devices with tree output for partitions, optional JSON outp
 inxi		--	tool with nicely coloured output for infos about hardware, IPs and weather
 iftop		--	like top, but for network traffic
 findmnt		--	show tree of all active mounts
+ssh-copy-id	--	adds local keys to remote machine authorized_keys
 ===============================================================================
 windows:
 --------
