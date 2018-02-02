@@ -23,3 +23,10 @@ Passwort-Hashes erzeugen:
 -------------------------
 userPassword: slappasswd -h {SSHA}
 sambaNTPassword: perl -MCrypt::SmbHash -e 'print Crypt::SmbHash::nthash("PASSWORT"), "\n";'
+===============================================================================
+neuen Attributswert/neues Attribut mit ldapmodify hinzufügen:
+-------------------------------------------------------------
+dn: cn=nosshlogin,ou=groups,cn=fg-networking.de
+changetype: modify
+add: memberUid
+memberUid: calcheck
