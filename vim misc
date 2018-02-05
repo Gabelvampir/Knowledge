@@ -14,3 +14,6 @@ Inserting a "=" character 80 times (in command mode):
 " Same thing (:le = :left = left-align given range; % = all lines):
 :%le
 ===============================================================================
+To clear the last used search pattern:
+:let @/ = ""
+===============================================================================
