@@ -12,6 +12,7 @@ inxi		--	tool with nicely coloured output for infos about hardware, IPs and weat
 iftop		--	like top, but for network traffic
 findmnt		--	show tree of all active mounts
 ssh-copy-id	--	adds local keys to remote machine authorized_keys
+spectre-meltdown-checker	--	checks for spectre/meltdown vulns and mitigations
 ===============================================================================
 windows:
 --------
