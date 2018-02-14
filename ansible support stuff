@@ -1,0 +1,6 @@
+Ausgefallene Router aus Ansible Log extrahieren:
+sed -r -n '/FAIL/s/^.*(fatal: .[-.a-z0-9]+.: FAILED).*$/\1/p' LOGDATEI
+
+Nicht erfolgreiche Pings aus Ansible Playbook Logdateien extrahieren:
+sed '/\$$/{N;s/\n$//}' Ansible-Logs-Szenario_1-Ausfall/*.txt | awk -F '\n' -v RS='' '$0 !~ /!!!!!/{for (i=1; i<=NF; i++) {if ($i ~ "Echos to ") {print $i}}}' | cut -d' ' -f7 | tr -d , | tr '[:upper:]' '[:lower:]' | sort -u | while read IP; do printf -- '%s ' "$IP"; { host "$IP" | awk '{print$NF}'; }; done
+(beides von EA)
