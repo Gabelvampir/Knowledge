@@ -20,3 +20,22 @@ manpages (4.14-1) unstable; urgency=medium
 
  -- Dr. Tobias Quathamer <toddy@debian.org>  Sun, 26 Nov 2017 21:23:01 +0100
 ================================================================================
+glibc (2.26-5) unstable; urgency=medium
+
+  Starting with version 2.26-1, the glibc requires a 3.2 or later Linux
+  kernel.  If you use an older kernel, please upgrade it *before*
+  installing this glibc version. Failing to do so will end-up with the
+  following failure:
+
+    Preparing to unpack .../libc6_2.26-5_amd64.deb ...
+    ERROR: This version of the GNU libc requires kernel version
+    3.2 or later.  Please upgrade your kernel before installing
+    glibc.
+
+  The decision to not support older kernels is a GNU libc upstream
+  decision.
+
+  Note: This obviously does not apply to non-Linux kernels.
+
+ -- Aurelien Jarno <aurel32@debian.org>  Tue, 23 Jan 2018 22:03:12 +0100
+================================================================================
