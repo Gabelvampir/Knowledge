@@ -43,3 +43,7 @@ git reset HEAD CONTRIBUTING.md
 
 --git docu for undoing stuff--
 https://git-scm.com/book/en/v2/Git-Basics-Undoing-Things
+
+
+--git log tree--
+git log --graph --oneline --decorate --all
