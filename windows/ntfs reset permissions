@@ -1,0 +1,5 @@
+in cmd.exe with admin rights (<DIR> is to be reset):
+icacls <DIR> /T /Q /C /RESET
+
+it can be necessary to take ownership beforehand:
+takeown /R /F <DIR>
