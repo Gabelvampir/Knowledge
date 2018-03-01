@@ -1,0 +1,4 @@
+Nutanix mail servers (SMTP) for Cluster Pulse ans alert mails:
+--------------------------------------------------------------
+nsc01.nutanix.net on port 80 
+nsc02.nutanix.net on port 80
