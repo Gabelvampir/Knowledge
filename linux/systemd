@@ -1,4 +1,7 @@
 http://www.dynacont.net/documentation/linux/Useful_SystemD_commands/
 https://www.freedesktop.org/wiki/Software/systemd/NetworkTarget/
 https://www.freedesktop.org/software/systemd/man/systemd.unit.html
+
 systemd-analyze verify foobar.service   # validate systemd service
+
+/run/systemd/generator.late/	--	location of .service files generated at boot by systemd-sysv-generator from initscripts
