@@ -43,4 +43,5 @@ http://www.tcpipguide.com		--	great guide to all things TCP/IP (also available a
 tools:
 ------
 https://github.com/udhos/goben	--	goben is a golang tool to measure TCP/UDP transport layer throughput between hosts
-https://github.com/rhicks/bgp-dashboard	
+https://github.com/rhicks/bgp-dashboard	--
+https://www.bitwizard.nl/mtr/	--	MTR uses ping and traceroute to determine link quality between host and target
