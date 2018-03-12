@@ -55,3 +55,23 @@ apt (1.6~alpha8) UNRELEASED; urgency=medium
 
  -- Julian Andres Klode <juliank@ubuntu.com>  Mon, 12 Feb 2018 12:53:18 +0100
 ================================================================================
+facter (3.10.0-3) unstable; urgency=medium
+
+  This is a major upgrade from the 2.x series with many breaking changes.
+
+  Facter has been rewritten in C++ and the old Ruby implementation has been
+  removed. Facter still provides a Ruby API for custom facts, however much of
+  the old Ruby API is no longer available. As a result, custom facts may have
+  to be modified to work with the current Ruby API.
+
+  Furthermore some rarely-used facts have been removed, potentially breaking
+  Puppet manifests that use them.
+
+  Please check the release notes at
+
+    https://docs.puppet.com/facter/3.0/release_notes.html
+
+  and all subsequent release notes for a detailed account of breaking changes.
+
+ -- Apollon Oikonomopoulos <apoikos@debian.org>  Mon, 05 Mar 2018 23:13:37 +0200
+================================================================================
