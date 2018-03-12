@@ -1,0 +1,2 @@
+open aptitude -> Shift + G -> change to:
+task,status,pattern(?origin()),section(subdirs,passthrough),section(topdir)
