@@ -1,5 +1,5 @@
-linux:
-------
+linux CLI:
+----------
 pqiv		--	image display
 scrot		--	screenshot commandline program (use i.e. -s -z or -c -d 3 -u -b -z)
 mupdf		--	fast pdf reader (on windows also part of SumatraPDF)
@@ -13,9 +13,10 @@ iftop		--	like top, but for network traffic
 findmnt		--	show tree of all active mounts
 ssh-copy-id	--	adds local keys to remote machine authorized_keys
 spectre-meltdown-checker	--	checks for spectre/meltdown vulns and mitigations
+sigal		--	generator for nice static web photo galeries (see https://lwn.net/Articles/748629/)
 ===============================================================================
-windows:
---------
+windows CLI:
+------------
 tzutil		--	timezone util (/g current tz, /s set tz, /l list all tz)
 ===============================================================================
 linux interesting but unpractical stuff:
