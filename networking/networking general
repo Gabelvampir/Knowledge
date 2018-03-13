@@ -46,3 +46,6 @@ https://github.com/udhos/goben	--	goben is a golang tool to measure TCP/UDP tran
 https://github.com/rhicks/bgp-dashboard	--
 https://www.bitwizard.nl/mtr/	--	MTR uses ping and traceroute to determine link quality between host and target
 https://tehnoblog.org/ip-tools/ip-address-aggregator/	
+http://facebook.github.io/augmented-traffic-control/
+http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/
+https://tcconfig.readthedocs.io/en/latest/
