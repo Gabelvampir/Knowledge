@@ -36,6 +36,16 @@ That also works on the S2500's.
 
 -- from https://www.reddit.com/r/networking/comments/63lfl9/run_cable_tests_from_your_cisco_switches/
 =========================================================================================================
+OSPF best practices:
+--------------------
+1.)Don't create multiple areas if you don't need to.
+2.)Dont forget that you can only summarize at area boundaries (see item 1.)
+3.) On your point-to-point ethernet links, set the network type to point-to-point. This will remove the DR and DR election and will optimize your LSDB by removing those type 2 LSAs.
+4.) Turn on authentication
+5.) Don't use BFD on tunnels routing over the internet
+6.) Don't adjust OSFP's many knobs unless you have a reason to.
+-- from https://www.reddit.com/r/networking/comments/83uhlb/moronic_monday/dvkpu8d/
+=========================================================================================================
 https://www.clipfix.com/		--	fix broken network cable clips
 http://www.revolutionwifi.net/revolutionwifi/p/ssid-overhead-calculator.html	--  SSID overhead chart
 http://www.tcpipguide.com		--	great guide to all things TCP/IP (also available as No Starch Press book)
@@ -45,7 +55,7 @@ tools:
 https://github.com/udhos/goben	--	goben is a golang tool to measure TCP/UDP transport layer throughput between hosts
 https://github.com/rhicks/bgp-dashboard	--
 https://www.bitwizard.nl/mtr/	--	MTR uses ping and traceroute to determine link quality between host and target
-https://tehnoblog.org/ip-tools/ip-address-aggregator/	
-http://facebook.github.io/augmented-traffic-control/
-http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/
-https://tcconfig.readthedocs.io/en/latest/
+https://tehnoblog.org/ip-tools/ip-address-aggregator/	--	Tool to aggregate IP networks
+http://facebook.github.io/augmented-traffic-control/	--	Project to control Internet connection bandwidth etc.
+http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/	--	blog about tc (Linux tool for adding latency to a NIC)
+https://tcconfig.readthedocs.io/en/latest/	--	config helper for tc
