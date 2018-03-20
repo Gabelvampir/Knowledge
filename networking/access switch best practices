@@ -1,0 +1,178 @@
+Upgrade firmware levels to current
+Set licensing level / input license keys
+Enable appropriate features (ip routing, stacking, etc...)
+create stacks wherever stacking
+For advanced switches only {
+    Create a loopback adapter for the switch
+    set an IP address /32 or /128 for management
+    bind all management features to this loopback
+    bind all outgoing communication to this loopback
+    // all too often I see "int vlan 10" being used as the 
+    // management interface for a switch that is
+    // participating in OSPF or BGP. 
+    // Management should be on loopback interfaces
+    // wherever practical. 
+}
+Create an ACL of source IP addresses of:
+    - Admins: ACL 1
+    - Monitoring servers (snmp) : ACL 2
+    - Other switches for NTP sync : ACL 3 (on core switches only)
+Setup DNS resolution for the switch
+Setup a hostname on the switch
+Setup a domainname on the switch
+Set the date/time on the switch
+Set the timezone on the switch
+Setup remote management of the switch {
+    Turn off HTTP access
+    Turn off HTTPS access
+    Turn off Telnet access
+    Turn off SNMP access (see SNMP below if you want it)
+    Set SSH to version 2
+    Create an SSH key with a mod 2048
+    Set SSH to accept connections only from that ACL
+    Set SSH terminal logout duration time (I use 1 hour, but security guys hastle me about it)
+}
+Setup remote monitoring of the switch (optional) {
+    Enable SNMP
+    Set SNMP location, use GPS coordinates
+    Set SNMP contact information, use contact accounts
+    Set SNMP to version 3 only (unless you need v2c)
+    Create read-only v3 credentials (unless you need RW)
+    Create read/only v2c community string(s)
+    Set SNMP to only accept connections from ACL 2
+}
+Setup credentials {
+    Enable password security (service password encryption or simmilar)
+    Setup "enable" password. 
+    Option 1: { 
+        Create some local user accounts
+        Assign user account(s) access level(s)
+        Option 1a: Assign passwords to those accounts
+        Option 1b: Assign certificates to those accounts
+    } Option 2: {
+        Create 1 master admin account
+        Assign account god level access
+        Create unique "good" password
+    } Option 3: {
+        Erase local user accounts
+        Configure switch to use RADIUS or LDAP or another authentication
+        Configure user groups in RADIUS or LDAP with appropriate permissions
+        Create user accounts in Active Directory or simmilar
+    }
+    Set minimum password requirements
+}
+Setup logging {
+    Direct logging to an appropriate server
+    Set an appropriate level of log filtering
+    setup email alerting for various log alert levels
+}
+Setup VTP {
+    Option 1: disable VTP (or set it to passive/whatever)
+    Option 2: configure VTP {
+        Set a VTP domain and/or password
+        Create your vlans on the VTP master
+        Pray. 
+        Backup vlan.dat. 
+    }
+}
+Create port channels or trunks (LAGs) {
+    create the port channels or trunks
+    assign ports to the port channels or trunks
+    assign configurations to the port channels or trunks
+    verify that interface configuration for member ports matches the po or trunk config
+    verify that LACP or PAGP or whatever is selecting the appropriate number of interfaces
+}
+Setup VLANs {
+    Create/name vlans
+    set ports as access/trunk/hybrid ports, configure vlan access explicitly
+    // I really hate finding this:
+    // int gi 1/1
+    //    switchport mode trunk
+    //    description "who needs to specify which vlans are allowed, anyway!!!"
+    set management vlan if you are moving off of vlan 1
+    // you are moving off of vlan 1, right?
+    set vlan allowed on port channels or other trunk ports
+}
+Optional: Create VLAN interfaces {
+    If doing L3 configuration:
+    create the vlan interfaces, 
+    bind interfaces to VRFs, if appropraite
+    assign IP addresses, DHCP relays, etc...       
+}
+Setup DHCP {
+    Option 1: {
+        Set dhcp filtering to only accept DHCP offers from uplink ports
+        Set dhcp relay (if the switch is routing) 
+        Set redundant dhcp relay (if there are 2 DHCP server addresses) 
+        Set additional dhcp relays (if needed for 802.1x)
+    } Option 2: {
+        Create DHCP pools
+        Create DHCP exclusions
+        // seriously, switch manufacturers, why do you not automatically
+        // exclude the local interface IP address from DHCP offers? 
+    }
+}
+Setup IPv4 {
+    disable DHCP clients on any interfaces that have them by default (vlan 1, for example)
+    Create VRFs if appropriate
+    bind interfaces to VRFs if appropriate
+    Assign IP addresses
+    Create VRRP or HSRP sets if appropriate
+    Assign *additional* IP addresses if required
+    Create appropriate static routes (in VRFs if appropriate)
+    Create routing protocol instances, if used
+    Configure routing protocol subnets and and peers (per vrf if needed)
+}
+Setup IPv6 {
+    see IPv4, mostly. 
+    enable router advertisements if you aren't using DHCPv6, etc...
+}
+Setup NTP {
+    On 3 of your switches, set at least 5 NTP servers (or setup some GPS clocks, etc...)
+    On those 3 switches, set eachother as peers
+    On those 3 switches, set ACL 3 as permitted to connect to NTP
+    On all other switches, set those 3 switches as servers
+}
+Setup STP {
+    Select a spanning-tree type (STP, MSTP, RSTP, PVSTP, RPVSTP+, whatever)
+    Select a root switch and alternate root switch
+    Select a STP domain name (if appropriate for the protocol you selected)
+    Configure STP on the root switch, "root primary"
+    Configure STP on the backup root, "root secondary"
+    configure the "uplink" ports of each switch as better priority than their access ports
+    Client/host ports/BPDU guard, root guard, UDLD, as mentioned
+}
+Config backup/monitoring to central server {
+    Create a central server that can collect switch configurations and display deltas
+    Enter switches into config management
+    configure email alerting on configuration changes
+}
+Setup 802.1x authentication { 
+    Configure connectivity to a radius server, set ports to use 802.1x authentication
+    create an "auth" vlan for clients who have not yet authenticated
+    The auth vlan should be switch-local only and should not propagate past the switch (unless the portal is not on the switch)
+    set all ports' default vlan into the "auth" vlan (so if 802.1x fails, the ports are unusable, but not "Down")
+}
+Setup VTYs and Console {
+    Set console passwords, timeouts
+    Set vty inputs (SSH? telnet?) 
+    // telnet is required for cisco switch clustering ./sigh
+    Set vty outputs (none? ssh?)
+}
+Setup switch clustering (management clustering, not "stacking")
+Setup switch clustering (high availability clustering, not "stacking")
+Optional: setup port ACLs {
+    either use 802.1x to setup some dynamic port ACLs or
+    setup some static port ACLs.
+}
+Optional quality-of-life settings: {
+    Disable IP lookup (optional, but nice)
+    Set logging asynchronous (optional, but nice)
+    If you are on comware, create an alias for "sys" called "enable"
+    If you are on comware, create an alias for "display" called "show"
+    Turn off nag warnings about transceiver compatibility/support ability
+    // service unsupported transceiver
+}
+-- from https://www.reddit.com/r/networking/comments/85hqse/comment/dvxml9a
+
+See also https://www.reddit.com/r/networking/comments/7vwx11/why_switchport_portsecurity_maximum_should_be/dtvza5z/  and https://www.reddit.com/r/networking/comments/85hqse/comment/dvy6f8a
