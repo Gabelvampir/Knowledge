@@ -25,3 +25,17 @@ USSD-Code				Funktion													Besonderheit
 					Dienst über die #37#, den Status über *#37# abfragen.								Nur bei Telekom
 **05***#				Damit könnt ihr eine gesperrte PIN mithilfe der PUK wieder freischalten
 -- https://www.giga.de/extra/android-spezials/tipps/ussd-mmi-code/
+===============================================================================
+Serial	Description				USSD Code
+1	To Know IMEI Number of Android		*#06#
+2	GPS System Test				*#*#1472365#*#*
+3	Service For Google Talk			*#*#1472365#*#*
+4	Reset Factory Date			*#*#8255#*#*
+5	Current Firmware of SmartPhone		*#*#7780#*#*
+6	Main Service Menu			*#*#197328640#*#*
+7	General Information And Battery Info	*#*#4636#*#*
+8	Power Button Change			*#*#7594#*#*
+9	Testing Mode				*#0*#
+10	Singal Status Service Mode		*#0011#
+-- https://www.linkedin.com/pulse/10-useful-ussd-codes-android-phone-owners-ali-mahdavi
+===============================================================================
