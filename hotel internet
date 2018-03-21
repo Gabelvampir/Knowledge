@@ -14,3 +14,7 @@ http://hotspot/authen/start/
 No.
 http://hotspot/authen/status/	--	status page, logout button
 ================================================================================
+Android Connectivity Check:
+---------------------------
+http://connectivitycheck.gstatic.com/generate_204
+================================================================================
