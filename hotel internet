@@ -5,7 +5,8 @@ https://hotspot.internet-for-guests.com/logon
 ICE:
 ----
 wifionice.de
-https://portal.imice.de/
+https://portal.imice.de/  --  portal for newspapers etc
+blocks: SSH
 ================================================================================
 Hotel Europa Style Frankfurt:
 -----------------------------
