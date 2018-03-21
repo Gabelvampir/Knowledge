@@ -1,0 +1,27 @@
+Klingeldauer bis Mailbox (MMI Code)
+Anbieter    Telekom         Vodafone        O2
+Kombination **61*3311*11*X# **61*5500*11*X# **61*333**X#
+X = 5, 10, 15, 20, 25, 30 Sekunden
+-- https://www.giga.de/apps/voicemail/tipps/voicemail-iphone-laenger-klingeln-lassen-und-mailbox-einrichten/
+===============================================================================
+USSD-Code: Die wichtigsten Codes im Überblick
+USSD-Code				Funktion													Besonderheit
+*135#					Eigene Telefonnummer anzeigen											Nur im D1-(Telekom-)Netz
+*#*#4636#*#* bzw. *#0*# (Samsung)	Öffnet das Test-Menü eures Android-Smartphones, mit dem ihr zahlreiche Funktionen des Gerätes überprüfen könnt.	Nur für Android-Smartphones
+*#0228#					Zeigt Informationen über eure Batterie an.									Nur für Android
+*#1234#					Zeigt Informationen über das Smartphone und die installierte Software an.					Nur für Android
+*#06#					Zeigt die IMEI (und Seriennummer) eures Handys.	
+**04****				Auf diese Art und Weise könnt ihr die die PIN eures Handys ändern.	
+*#2222#					Zeigt die Hardware-Revisions-Nummer eures Geräts.								Nur Android
+#31#					Möchtet ihr eure eigene Telefonnummer beim Anruf einer bestimmten Rufnummer unterdrücken, gebt diesen Code
+					inkl. der Rufnummer ein. Gibt man nur den Code ohne Telefonnummer ein, wird die Rufnummernunterdrückung
+					allg. aktiviert. Über den Code *31# wird die Unterdrückung (allgemein oder für eine Nummer) wieder deaktiviert.
+*43#					Dieser Code schaltet den Anklopf-Ton eures Handys an. Wenn ihr gerade telefoniert und einen zweiten Anruf
+					erhaltet, hört ihr dann einen Klopf-Ton. Deaktiviert wird diese Funktion mit #43#. Und falls ihr wissen wollt,
+					welche Einstellungen nun aktuell ist, gebt den USSD-Code *#43# ein.	
+*100# oder *101#			Falls ihr eine Prepaid-Karte nutzt, könnt ihr hiermit euer Guthaben abrufen (funktioniert mit vielen
+					Netzanbietern).	
+*37#					Damit kann man einen Rückruf anfordern, wenn die angerufene Nummer besetzt ist. Ausschalten kann man den
+					Dienst über die #37#, den Status über *#37# abfragen.								Nur bei Telekom
+**05***#				Damit könnt ihr eine gesperrte PIN mithilfe der PUK wieder freischalten
+-- https://www.giga.de/extra/android-spezials/tipps/ussd-mmi-code/
