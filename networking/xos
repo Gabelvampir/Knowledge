@@ -1,19 +1,22 @@
 disable idletimeout
-############
+###############################################################################
 enable snmp access snmpv3     #bei G2 benötigt für SNMPv3
-############
+###############################################################################
 enable policy      #schaltet bei G2 geraeten enterasys style multiauth an
-############
+###############################################################################
 conf netlogin add mac-list default    #sonst funktioniert multiauth mac auth nicht
 #(alternativ im Policy Manager->Network->Switch->Authentication->MACAuth->Set Password Mask anhaken->apply
-############
+###############################################################################
 show netlogin session
 show policy rule
 show policy profile
 #anzeigen ob Policy Manager rules umgestezt werden
-############
+###############################################################################
 show radius   # pruefen ob NAC nach enforce benutzt wird
-############
+###############################################################################
 conf bootprelay "vlan_0041" add 10.4.1.103 # stellt dhcphelper um (hier auf pod NAC server)
-############
-
+###############################################################################
+debug epm enable trial-license
+# setting a trial license (no tab completion)
+debug epm clear license
+# if above doesn't work use that to start over
