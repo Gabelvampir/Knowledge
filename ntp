@@ -1,0 +1,2 @@
+ntpq -c pe	--	show peered servers
+ntpq -c rv	--	shows sync status
