@@ -162,10 +162,12 @@ How to exit cluster reconfigure
       nutanix@cvm$ rm ~/.node_reconfigure
 - Restart genesis. nutanix@cvm$ genesis restart
 ================================================================================
-check vCenter connectivity:
----------------------------
+check vCenter connectivity from CVM:
+------------------------------------
 allssh ping -c1 10.254.17.5
 allssh nc -n -v -w5 -z 10.254.17.5 80
 allssh nc -n -v -w5 -z 10.254.17.5 443
+
+offical but broken:
 ncc health_checks hypervisor_checks check_vcenter_connection
 ================================================================================
