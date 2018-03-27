@@ -19,3 +19,14 @@ Android Connectivity Check:
 ---------------------------
 http://connectivitycheck.gstatic.com/generate_204
 ================================================================================
+Firefox Connectivity Check:
+---------------------------
+detectportal.firefox.com/success.txt
+================================================================================
+Hotel Bliss Frankfurt:
+----------------------
+http://1.1.1.1/
+24h one time user and PW ([0-9a-z]{4})
+http://1.1.1.1/info
+shitty internet (around 200-250kbyte/s)
+================================================================================
