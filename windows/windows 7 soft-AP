@@ -1,0 +1,4 @@
+0) start cmd with admin rights
+1) netsh wlan set hostednetwork mode=allow "ssid=myssid"  "key=mykey” keyUsage=persistent
+2) netsh wlan start hostednetwork
+3) share internet with the new Microsoft Virtual WiFi Miniport Adapter connection (internet adapter Properties->Sharing->Allow other network users to connect through this computer's Internet connection->choose connection
