@@ -60,3 +60,4 @@ http://facebook.github.io/augmented-traffic-control/	--	Project to control Inter
 http://bencane.com/2012/07/16/tc-adding-simulated-network-latency-to-your-linux-server/	--	blog about tc (Linux tool for adding latency to a NIC)
 https://tcconfig.readthedocs.io/en/latest/	--	config helper for tc
 https://www.nrl.navy.mil/itd/ncs/products/core	--	CORE, the Common Open Research Emulator, network emulator by the US Navy
+https://github.com/afourmy/SWAP		--	illustrator for wavelength allocation in optical networks
