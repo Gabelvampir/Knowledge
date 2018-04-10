@@ -1,5 +1,7 @@
 Compression=yes
 Protocol=2
+ServerAliveInterval 300
+TCPKeepAlive yes
 
 Host gnocchi
    Hostname gnocchi.unix-ag.uni-kl.de
