@@ -148,6 +148,7 @@ J. Change all IPMI IP addresses
        ipmitool lan set 1 netmask 255.255.255.128
        ipmitool lan set 1 defgw ipaddr 192.168.121.1
        [use /ipmitool on ESXi, ipmitool on AHV]
+	c. Genesis needs to be restarted after the (regular) IPMI IP address change. The IPMI address change is executed after the cluster has started, thus the Genesis restart that noticed the new CVM and hypervisor IP addresses did still see the old IPMI addresses.
 
 K. If necessary, remove old DNS & NTP server
 
