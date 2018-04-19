@@ -62,3 +62,5 @@ https://tcconfig.readthedocs.io/en/latest/	--	config helper for tc
 https://www.nrl.navy.mil/itd/ncs/products/core	--	CORE, the Common Open Research Emulator, network emulator by the US Navy
 https://github.com/afourmy/SWAP		--	illustrator for wavelength allocation in optical networks
 https://github.com/adolfintel/speedtest	--	Code for hosting your own HTML5 based speedtest site
+rackdiag from nwdiag package	--	Rack Diagramm generator, see http://blockdiag.com/en/ and https://www.reddit.com/r/networking/comments/8dbs0k/tip_for_documenting_rack_rackdiagram/
+https://github.com/PackeTsar/freeztp	--	FreeZTP, ZTP Server for Cisco IOS Catalyst Switches
