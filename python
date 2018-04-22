@@ -4,3 +4,7 @@ a = r'whatever'   creates a raw string (does not interpret i.e. \n)
 a = u'whatever'   creates a unicode string
 ===============================================================================
 dir(str) -- shows all string methods
+===============================================================================
+https://docs.python.org/3/library/stdtypes.html#string-methods	--	string methods docu
+http://data8.org/datascience/	--	MIT datascience library docu
+https://www.inferentialthinking.com/	--	MIT Foundations of Data Science textbook
