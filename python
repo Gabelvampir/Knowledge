@@ -6,5 +6,6 @@ a = u'whatever'   creates a unicode string
 dir(str) -- shows all string methods
 ===============================================================================
 https://docs.python.org/3/library/stdtypes.html#string-methods	--	string methods docu
-http://data8.org/datascience/	--	MIT datascience library docu
-https://www.inferentialthinking.com/	--	MIT Foundations of Data Science textbook
+http://data8.org/datascience/	--	Berkeley DS8 datascience library docu
+https://github.com/data-8/datascience	--	Berkeley DS8 datascience library
+https://www.inferentialthinking.com/	--	Berkeley Foundations of Data Science textbook
