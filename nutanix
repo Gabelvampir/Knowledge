@@ -172,3 +172,4 @@ allssh nc -n -v -w5 -z 10.254.17.5 443
 offical but broken:
 ncc health_checks hypervisor_checks check_vcenter_connection
 ================================================================================
+https://portal.nutanix.com/#/page/docs/details?targetId=Advanced-Admin-AOS-v51:ipc-cvm-ip-address-reconfigure-t.html
