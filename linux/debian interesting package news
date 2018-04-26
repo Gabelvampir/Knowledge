@@ -90,3 +90,21 @@ webkit2gtk (2.20.0-2) unstable; urgency=medium
 
  -- Alberto Garcia <berto@igalia.com>  Wed, 21 Mar 2018 14:14:44 +0200
 ================================================================================
+apt (1.6~rc1) unstable; urgency=medium
+
+  Seccomp sandboxing has been turned off by default for now. If it works
+  for you, you are encouraged to reenable it by setting APT::Sandbox::Seccomp
+  to true.
+
+ -- Julian Andres Klode <jak@debian.org>  Fri, 06 Apr 2018 14:14:29 +0200
+================================================================================
+qt4-x11 (4:4.8.7+dfsg-14) UNRELEASED; urgency=medium
+
+  Since 4:4.8.7+dfsg-13 qt4-x11 is patched to make use of OpenSSL 1.1. As Qt4
+  is not supported upstream anymore this patch did not get a full review.
+  This is why 4:4.8.7+dfsg-13 was uploaded to experimental first. As we have
+  not received any bugs in 4 months we are now pushing this to unstable.
+
+ -- Debian Qt/KDE Maintainers <debian-qt-kde@lists.debian.org>  Wed, 18 Apr 2018 14:07:36 -0300
+================================================================================
+
