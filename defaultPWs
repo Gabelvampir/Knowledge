@@ -36,4 +36,8 @@ DB Casino App:
 --------------
 User: DB             Password: exklusiv
 ===============================================================================
+Avaya VSP Switches:
+-------------------
+Read Write access user:	user: rwa	passwort: secret
+===============================================================================
 /* vim: set ts=4 sw=4 tw=0 noet :*/
