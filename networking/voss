@@ -1,0 +1,16 @@
+shell (hidden command)
+================================================================================
+show boot config choice	--	zeigt ausgewählt configdatei für nächsten boot an
+show boot config flags	--	zeigt bootflags an
+================================================================================
+Bootflags:
+telnetd
+sshd
+factorydefault	--	beim nächsten booten wird das config file nicht gelesen, resettet sich automatisch nach false nach 1x booten
+================================================================================
+more config.cfg	--	texteditor
+source config.cfg	--	liest text config(schnipsel) ein
+================================================================================
+conf t -> logging screen	--	log to terminal
+================================================================================
+Loopback default name: ClipX (Clip = Circuit Less IP)
