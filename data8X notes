@@ -1,0 +1,2 @@
+_ = interact(convert_pay_string_to_number, pay_string='$42')
+-- makes interactive text box function version
