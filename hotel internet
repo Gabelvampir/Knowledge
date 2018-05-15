@@ -30,3 +30,9 @@ http://1.1.1.1/
 http://1.1.1.1/info
 shitty internet (around 200-250kbyte/s)
 ================================================================================
+Hotel Harheimer Hof:
+--------------------
+http://172.17.0.1 (login page)
+random login and PW (for whole stay)
+http://1.1.1.1 (info when logged in, redirects to http://172.17.0.1/ext-js/web-pages/login/useraware.html
+================================================================================
