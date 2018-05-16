@@ -1,2 +1,2 @@
 Router SSH: ssh -4 -o KexAlgorithms=+diffie-hellman-group1-sha1 trz-ts-bie-pe01.trz.bbip.db.de
-Console Server SSH: ssh -L deussers deussers:7015@192.168.10.14
+Console Server SSH: ssh -l deussers deussers:7015@192.168.10.14
