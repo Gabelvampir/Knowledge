@@ -1,0 +1,5 @@
+dpkg --print-architecture
+dpkg --print-foreign-architectures
+-- check debian for mor then one architecture installed
+================================================================================
+
