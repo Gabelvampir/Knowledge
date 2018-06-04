@@ -13,3 +13,9 @@ https://www.reddit.com/r/networking/comments/6ljtpo/bossing_cisco_around_with_an
 https://neckercube.com/index.php/2018/04/11/mind-map-for-ccie-ccnp-routing-switching/   --  Mind map for nearly all topics in CCIE RSv5 lab exam
 ===============================================================================
 K9 is for crypto (Kryptology?)
+===============================================================================
+configure terminal
+line vty 0 4
+escape-character 3
+-- configures Ctrl-C as break sequence instead of the default Ctrl-^ (Ctrl-Shift-6)
+===============================================================================
