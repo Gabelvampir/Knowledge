@@ -15,6 +15,7 @@ ssh-copy-id	--	adds local keys to remote machine authorized_keys
 spectre-meltdown-checker	--	checks for spectre/meltdown vulns and mitigations
 sigal		--	generator for nice static web photo galeries (see https://lwn.net/Articles/748629/)
 meld    --  visual diff tool (http://meldmerge.org/)
+tshark  --  CLI interface of wireshark, use with -r (read file), -V (decode everything and -2 (2 pass)
 ===============================================================================
 windows CLI:
 ------------
